@@ -1,0 +1,23 @@
+// Mixins
+
+@mixin flexCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flexColumn {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin pseudoElement {
+  position: absolute;
+  content: '';
+}
+
+@mixin mqSmall {
+  @media all and (max-width: 750px) {
+    @content;
+  }
+}

@@ -1,0 +1,47 @@
+@use '../abstracts' as *;
+
+// Global
+
+html {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  @media (prefers-reduced-motion: no-preference) {
+    scroll-behavior: smooth;
+  }
+}
+
+body {
+  background: $light-bg;
+}
+
+img {
+  display: block;
+  user-select: none;
+}
+
+a {
+  color: inherit;
+}
+
+button {
+  color: inherit;
+  font-family: inherit;
+  border: none;
+  cursor: pointer;
+}
+
+ul {
+  list-style: none;
+}
+
+.sr-only {
+  clip: rect(1px 1px 1px 1px);
+  clip: rect(1px, 1px, 1px, 1px);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
