@@ -17,6 +17,20 @@
   flex-direction: column;
 }
 
+@mixin flexCenterColumn {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin threeColumnGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-content: center;
+  align-items: center;
+}
+
 @mixin pseudoElement {
   position: absolute;
   content: '';
@@ -24,6 +38,12 @@
 
 @mixin mqSmall {
   @media all and (max-width: 750px) {
+    @content;
+  }
+}
+
+@mixin mqMedium {
+  @media all and (max-width: 1080px) {
     @content;
   }
 }

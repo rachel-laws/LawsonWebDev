@@ -1,1 +1,76 @@
 @use '../abstracts' as *;
+
+.intro {
+  .intro__heading {
+    @include flexCenter;
+    gap: 2.5rem;
+    margin-bottom: 2rem;
+    img {
+      width: 17rem;
+    }
+  }
+
+  .intro__services {
+    @include threeColumnGrid;
+    gap: 2rem;
+    img {
+      width: 10rem;
+    }
+
+    @include mqMedium {
+      grid-template-columns: 1fr;
+      padding-inline: 10vw;
+    }
+  }
+
+  .intro__service {
+    @include flexCenterColumn;
+  }
+}
+
+.cta__buttons {
+  @include flexCenter;
+  gap: 6vw;
+  width: 100%;
+  padding-block: 4rem;
+  background: $dark-bg;
+
+  @include mqMedium {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  button {
+    width: 14.5rem;
+    height: 3.2rem;
+    padding: 0.75rem 1.5rem;
+    font-size: 1.2rem;
+    font-weight: 500;
+    box-shadow: -3px 3px 6px black;
+    transition: 200ms ease;
+  }
+
+  .cta__button-services,
+  .cta__button-pricing {
+    color: $white-txt;
+    background: $dark-bg;
+    border: 3px solid $light-bg;
+
+    &:hover {
+      color: $black-txt;
+      background: $light-bg;
+    }
+  }
+
+  .cta__button-consultation {
+    color: $black-txt;
+    background: $light-bg;
+    border: 3px solid transparent;
+
+    &:hover {
+      color: $white-txt;
+      background: $dark-bg;
+      border-color: $light-bg;
+    }
+  }
+}

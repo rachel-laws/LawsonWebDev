@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500;600&family=Raleway:ital,wght@0,300;0,400;0,500;0,600;1,100&family=Source+Code+Pro&display=swap" />
+      href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@700&family=Raleway:ital,wght@0,300;0,400;0,500;0,600;1,100&family=Source+Code+Pro&display=swap" />
     <!-- Bootstrap Icons -->
     <link
       rel="stylesheet"
@@ -21,35 +21,11 @@
   </head>
   <body>
     <header>
-      <nav id="nav">
-        <img
-          src="/assets/svg/header_logo.svg"
-          alt="Lawson Web Development logo" />
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="services.html">Services</a></li>
-          <li><a href="pricing.html">Pricing</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-        <button
-          id="toggleMobileNav"
-          class="nav__toggle"
-          aria-controls="nav"
-          aria-label="Toggle Navigation">
-          <i class="bi bi-list"></i>
-        </button>
-      </nav>
       <div class="header__img">
-        <div class="header__title">
-          <img
-            src="/assets/svg/circle_logo.svg"
-            alt="Lawson Web Development logo" />
-        </div>
-        <div class="header__slogan">
-          <a href="">
-            High-quality web development and design services customized for you
-          </a>
-        </div>
+        <img
+          src="/assets/svg/circle_logo.svg"
+          class="header__title"
+          alt="Lawson Web Development logo" />
       </div>
       <div class="header__bottom">
         <ul>
@@ -61,7 +37,77 @@
         </ul>
       </div>
     </header>
-    <main></main>
+    <nav id="nav">
+      <img
+        src="/assets/svg/header_logo.svg"
+        alt="Lawson Web Development logo" />
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="pricing.html">Pricing</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <button
+        id="toggleMobileNav"
+        class="nav__toggle"
+        aria-controls="nav"
+        aria-label="Toggle Navigation">
+        <i class="bi bi-list"></i>
+      </button>
+    </nav>
+    <main>
+      <section id="intro" class="intro">
+        <div class="intro__heading">
+          <img
+            src="/assets/img/intro_img.png"
+            alt="Web symbol with 3 arrows pointing upward" />
+          <h1>
+            Bring your website
+            <span class="block">
+              to the
+              <span class="special-font"> next level</span>
+            </span>
+          </h1>
+        </div>
+        <div class="intro__services">
+          <div class="intro__service">
+            <img
+              src="/assets/img/services_design.png"
+              alt="Computer outline with pencil drawing a light bulb" />
+            <h2>Web Design</h2>
+            <p>
+              Work with me to create the ideal web design to showcase your
+              brand's aesthetics, strengths, and...
+            </p>
+          </div>
+          <div class="intro__service">
+            <img
+              src="/assets/img/services_develop.png"
+              alt="Computer outline with HTML code symbol" />
+            <h2>Web Development</h2>
+            <p>
+              Work with me to create the ideal web design to showcase your
+              brand's aesthetics, strengths, and...
+            </p>
+          </div>
+          <div class="intro__service">
+            <img
+              src="/assets/img/services_more.png"
+              alt="Computer outline with plus symbol" />
+            <h2>And More!</h2>
+            <p>
+              Work with me to create the ideal web design to showcase your
+              brand's aesthetics, strengths, and...
+            </p>
+          </div>
+        </div>
+      </section>
+      <div class="cta__buttons">
+        <button class="cta__button-services">View All Services</button>
+        <button class="cta__button-pricing">See Pricing Options</button>
+        <button class="cta__button-consultation">Free Consultations</button>
+      </div>
+    </main>
     <footer></footer>
   </body>
 </html>

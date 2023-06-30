@@ -1,3 +1,17 @@
+.block {
+  display: block;
+}
+
+.sr-only {
+  clip: rect(1px 1px 1px 1px);
+  clip: rect(1px, 1px, 1px, 1px);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
 html {
   margin: 0;
   padding: 0;
@@ -13,7 +27,11 @@ body {
   margin: 0;
   padding: 0;
   background: #f4f4f4;
-  min-height: 150vh;
+}
+
+section {
+  margin-block: 4rem;
+  margin-inline: 10vw;
 }
 
 img {
@@ -23,6 +41,7 @@ img {
 
 a {
   color: inherit;
+  text-decoration: none;
 }
 
 button {
@@ -36,22 +55,28 @@ ul {
   list-style: none;
 }
 
-.sr-only {
-  clip: rect(1px 1px 1px 1px);
-  clip: rect(1px, 1px, 1px, 1px);
-  height: 1px;
-  overflow: hidden;
-  position: absolute;
-  white-space: nowrap;
-  width: 1px;
-}
-
 body {
   font-family: "Raleway", sans-serif;
 }
 
+h1 {
+  font-size: 3.2rem;
+  font-weight: 500;
+  line-height: 1.4;
+  letter-spacing: 0.75px;
+}
+
+h2 {
+  font-weight: 400;
+  font-size: 1.65rem;
+  letter-spacing: 0.75px;
+}
+
 .special-font {
   font-family: "Josefin Sans", sans-serif;
+  font-size: 3.6rem;
+  font-weight: 700;
+  color: #39b54a;
 }
 
 .code-font {
@@ -66,6 +91,9 @@ nav a {
 }
 
 header .header__img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   max-width: 100vw;
   height: 90vh;
   overflow: hidden;
@@ -82,33 +110,22 @@ header .header__img {
   }
 }
 header .header__title {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 100%;
-  width: 100%;
-  height: 100%;
-}
-header .header__title img {
   width: 40%;
+  max-width: 23rem;
+  margin-top: 3.1rem;
   border-radius: 50%;
   box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.4);
 }
-header .header__slogan {
-  position: absolute;
-  background: red;
-}
-header .header__slogan a {
-  background: red;
-  margin: auto;
+@media all and (max-width: 750px) {
+  header .header__title {
+    display: none;
+  }
 }
 header .header__bottom {
   display: flex;
   justify-content: center;
   align-items: center;
   max-width: 100vw;
-  height: 3rem;
   background: #121212;
   box-shadow: 0px 1px 8px rgba(0, 0, 0, 0.35);
 }
@@ -120,6 +137,12 @@ header .header__bottom ul {
   color: #ccb587;
   text-transform: uppercase;
   font-weight: 500;
+}
+@media all and (max-width: 750px) {
+  header .header__bottom ul {
+    flex-direction: column;
+    gap: 0.74rem;
+  }
 }
 header .header__diamond {
   width: 0.4rem;
@@ -199,6 +222,85 @@ nav .hidden {
     display: block;
     z-index: 99;
   }
+}
+
+.intro .intro__heading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2.5rem;
+  margin-bottom: 2rem;
+}
+.intro .intro__heading img {
+  width: 17rem;
+}
+.intro .intro__services {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+.intro .intro__services img {
+  width: 10rem;
+}
+@media all and (max-width: 1080px) {
+  .intro .intro__services {
+    grid-template-columns: 1fr;
+    padding-inline: 10vw;
+  }
+}
+.intro .intro__service {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.cta__buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6vw;
+  width: 100%;
+  padding-block: 4rem;
+  background: #121212;
+}
+@media all and (max-width: 1080px) {
+  .cta__buttons {
+    flex-direction: column;
+    gap: 2rem;
+  }
+}
+.cta__buttons button {
+  width: 14.5rem;
+  height: 3.2rem;
+  padding: 0.75rem 1.5rem;
+  font-size: 1.2rem;
+  font-weight: 500;
+  box-shadow: -3px 3px 6px black;
+  transition: 200ms ease;
+}
+.cta__buttons .cta__button-services,
+.cta__buttons .cta__button-pricing {
+  color: #fefefe;
+  background: #121212;
+  border: 3px solid #f4f4f4;
+}
+.cta__buttons .cta__button-services:hover,
+.cta__buttons .cta__button-pricing:hover {
+  color: #0a0a0a;
+  background: #f4f4f4;
+}
+.cta__buttons .cta__button-consultation {
+  color: #0a0a0a;
+  background: #f4f4f4;
+  border: 3px solid transparent;
+}
+.cta__buttons .cta__button-consultation:hover {
+  color: #fefefe;
+  background: #121212;
+  border-color: #f4f4f4;
 }
 
 /*# sourceMappingURL=main.css.map */
