@@ -13,7 +13,11 @@ html {
 }
 
 body {
+  margin: 0;
+  padding: 0;
   background: $light-bg;
+  //TODO: Change min-height
+  min-height: 150vh;
 }
 
 img {
