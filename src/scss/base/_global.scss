@@ -21,6 +21,10 @@ body {
 section {
   margin-block: $section__margin-block;
   margin-inline: $section__margin-inline;
+
+  @include mqSmall {
+    margin-inline: $section__margin-inline-mobile;
+  }
 }
 
 img {
@@ -42,4 +46,5 @@ button {
 
 ul {
   list-style: none;
+  padding: 0;
 }
