@@ -1,1 +1,44 @@
 @use '../abstracts' as *;
+
+//TODO: Move text styles to typography
+
+.terms {
+  @include flexCenterColumn;
+  margin-top: 8rem;
+  line-height: 1.6;
+  font-size: 0.9rem;
+
+  .terms__background {
+    position: relative;
+    background: #fff;
+    max-width: 50rem;
+    padding: 3rem 4rem 2.5rem;
+    box-shadow: 0px 0px 20px rgb(0 0 0 / 0.15);
+  }
+
+  h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 3.5rem;
+    text-align: center;
+  }
+
+  h2 {
+    font-size: 1.3rem;
+    font-weight: 700;
+  }
+
+  p:first-of-type {
+    position: absolute;
+    top: 0;
+    right: 1.5rem;
+  }
+
+  ul {
+    padding-block: 0.25rem;
+    @include flexColumn;
+    gap: 1rem;
+    list-style: square;
+    margin-left: 1rem;
+  }
+}
