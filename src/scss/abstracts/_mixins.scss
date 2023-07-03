@@ -55,6 +55,12 @@
   }
 }
 
+@mixin mqXSmall {
+  @media all and (max-width: 400px) {
+    @content;
+  }
+}
+
 @mixin mqMedium {
   @media all and (max-width: 1080px) {
     @content;

@@ -1,5 +1,7 @@
 @use '../abstracts' as *;
 
+// General
+
 body {
   font-family: 'Raleway', sans-serif;
 }
@@ -25,14 +27,34 @@ h3 {
   color: #39b54a;
 }
 
+.process .special-font {
+  color: #3f37d6;
+}
+
 .code-font {
   font-family: 'Source Code Pro', monospace;
   font-size: 1.3rem;
 }
+
+// Nav
 
 nav a {
   color: $white-txt;
   text-decoration: none;
   text-transform: uppercase;
   letter-spacing: 1px;
+}
+
+// Footer
+
+footer {
+  color: #909090;
+  font-size: 0.8rem;
+}
+
+.footer__question {
+  p {
+    color: $gold-txt;
+    font-size: 1.4rem;
+  }
 }

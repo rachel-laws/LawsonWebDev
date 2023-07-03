@@ -22,6 +22,7 @@
 
   .intro__service {
     @include flexCenterColumn;
+    gap: 1.5rem;
     max-width: 25rem;
     margin: auto;
   }
@@ -33,20 +34,26 @@
   width: 100%;
   padding-block: 4rem;
   background: $dark-bg;
+  box-shadow: 0px 0px 15px rgb(0 0 0 / 0.25);
 
   @include mqMedium {
     flex-direction: column;
     gap: 2rem;
   }
 
-  button {
+  a {
     width: 14.5rem;
     height: 3.2rem;
     padding: 0.75rem 1.5rem;
+    text-align: center;
     font-size: 1.2rem;
     font-weight: 500;
     box-shadow: -3px 3px 6px black;
     transition: 200ms ease;
+
+    &:active {
+      transform: translateX(-3px);
+    }
   }
 
   .cta__button-services,
@@ -76,27 +83,28 @@
 
 .about {
   @include flexCenterColumn;
+
   .about__heading {
-    @include flexCenter;
-    gap: 3rem;
-    margin-bottom: 2rem;
+    margin-top: 1.5rem;
+    @include heading;
     img {
       width: 9rem;
+      animation: wiggle 8s infinite;
     }
   }
 
   .about__list {
     display: grid;
-    justify-content: center;
+    justify-content: space-between;
     grid-template-columns: 30% 60%;
-    gap: 4rem;
     margin-left: 3rem;
+    margin-top: 3rem;
 
     img {
-      width: 40rem;
-      height: 30rem;
-      margin-top: 0.5rem;
-      filter: brightness(120%);
+      width: 37rem;
+      height: 28rem;
+      margin-top: -0.5rem;
+      filter: brightness(110%);
     }
 
     ul {
@@ -121,17 +129,52 @@
   }
 }
 
-.process__video {
-  width: 2rem;
-  height: 2rem;
-}
+.home__quote {
+  padding-block: 4rem;
+  padding-inline: 23vw;
+  background: $dark-bg;
+  box-shadow: 0px 0px 15px rgb(0 0 0 / 0.25);
 
-.gallery {
-  .gallery__heading {
-    @include heading;
+  p {
+    position: relative;
+    line-height: 1.6;
+    font-size: 1.3rem;
+    background: linear-gradient(33deg, #c4c4c4, #f1f1f1, #eaeaea);
+    font-weight: 500;
+    padding: 2.5rem 4rem;
+    border-radius: 1px;
+    box-shadow: -4px 4px 25px black;
 
-    img {
-      width: 15rem;
+    &::after {
+      position: absolute;
+      content: '❝';
+      top: -5rem;
+      left: -1.25rem;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 8rem;
+      color: $gold-txt;
+      text-shadow: 5px 4px 0px $dark-bg;
     }
+
+    &::before {
+      position: absolute;
+      content: '❞';
+      bottom: -8.5rem;
+      right: -1.3rem;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 8rem;
+      color: $gold-txt;
+      text-shadow: -5px -4px 0px $dark-bg;
+    }
+
+    span {
+      display: block;
+      font-size: 1rem;
+      margin-top: 1rem;
+    }
+  }
+
+  @include mqSmall {
+    padding-inline: 10vw;
   }
 }
