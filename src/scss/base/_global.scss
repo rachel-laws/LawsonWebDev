@@ -23,6 +23,7 @@ section {
   margin-inline: $section__margin-inline;
 
   @include mqSmall {
+    margin-block: $section__margin-block-mobile;
     margin-inline: $section__margin-inline-mobile;
   }
 }

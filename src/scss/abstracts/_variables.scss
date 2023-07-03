@@ -1,5 +1,9 @@
+@use '../abstracts/mixins' as *;
+
 // Main
 
-$section__margin-block: 5rem 7rem;
+$section__margin-block: 4rem;
+$section__margin-block-mobile: 3rem 4rem;
+
 $section__margin-inline: 10vw;
-$section__margin-inline-mobile: 13vw;
+$section__margin-inline-mobile: 8vw;

@@ -2,29 +2,49 @@
 
 .intro {
   .intro__heading {
-    @include heading;
     img {
       width: 17rem;
+
+      @include mqMedium {
+        width: 14rem;
+      }
     }
   }
 
   .intro__services {
     @include threeColumnGrid;
-    gap: 3.5rem;
-    img {
-      width: 10rem;
-    }
+    padding-inline: 3rem;
+    gap: 4rem;
+    margin-top: 4rem;
 
     @include mqMedium {
       grid-template-columns: 1fr;
+      gap: 3rem;
+      padding-inline: 1rem;
+    }
+
+    @include mqSmall {
+      margin-top: 2.5rem;
+    }
+
+    img {
+      width: 10rem;
     }
   }
 
   .intro__service {
-    @include flexCenterColumn;
+    @include flexColumn;
+    align-items: center;
     gap: 1.5rem;
+    height: 25rem;
+    min-width: 16rem;
     max-width: 25rem;
     margin: auto;
+    line-height: 1.8;
+
+    @include mqMedium {
+      height: auto;
+    }
   }
 }
 
@@ -85,11 +105,15 @@
   @include flexCenterColumn;
 
   .about__heading {
-    margin-top: 1.5rem;
-    @include heading;
+    margin-top: 0.5rem;
+
     img {
       width: 9rem;
       animation: wiggle 8s infinite;
+
+      @include mqMedium {
+        width: 7rem;
+      }
     }
   }
 
@@ -97,14 +121,27 @@
     display: grid;
     justify-content: space-between;
     grid-template-columns: 30% 60%;
-    margin-left: 3rem;
     margin-top: 3rem;
+    margin-left: 3rem;
+
+    @include mqMedium {
+      @include flexCenterColumn;
+      gap: 3.5rem;
+      margin-top: 0.5rem;
+      margin-left: 2rem;
+    }
 
     img {
       width: 37rem;
       height: 28rem;
       margin-top: -0.5rem;
       filter: brightness(110%);
+
+      @include mqSmall {
+        width: 120%;
+        height: 120%;
+        margin-left: -2rem;
+      }
     }
 
     ul {
@@ -144,6 +181,11 @@
     padding: 2.5rem 4rem;
     border-radius: 1px;
     box-shadow: -4px 4px 25px black;
+
+    @include mqSmall {
+      font-size: 1.2rem;
+      padding: 2rem 2rem;
+    }
 
     &::after {
       position: absolute;

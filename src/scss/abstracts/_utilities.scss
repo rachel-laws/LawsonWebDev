@@ -1,5 +1,24 @@
+@use '../abstracts/mixins' as *;
+
+// Utility Classes
+
 .block {
   display: block;
+  @include mqSmall {
+    display: inline;
+  }
+}
+
+.heading {
+  @include flexCenter;
+  gap: 2.5rem;
+  margin-bottom: 2rem;
+
+  @include mqMedium {
+    flex-direction: column;
+    text-align: center;
+    gap: 1.5rem;
+  }
 }
 
 .sr-only {
