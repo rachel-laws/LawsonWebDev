@@ -2,18 +2,18 @@
 
 nav {
   position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
   z-index: 999;
+  top: 0;
+  left: 0;
+  right: 0;
 
+  height: 3.1rem;
   padding-inline: 3vw 3.5vw;
   background: $dark-bg;
   box-shadow: 0px 1px 8px rgb(0 0 0 / 0.35);
-  height: 3.1rem;
 
   ul {
     display: flex;
