@@ -9,6 +9,16 @@
   }
 }
 
+.nav-visible {
+  display: flex;
+}
+
+.nav-hidden {
+  @include mqSmall {
+    display: none;
+  }
+}
+
 .heading {
   @include flexCenter;
   gap: 2.5rem;

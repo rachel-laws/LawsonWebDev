@@ -1,47 +1,54 @@
 //* Mobile Navigation
 
-// const nav = document.querySelector('#nav');
-// const navLinks = document.querySelector('nav a');
-// const toggleMobileNav = document.querySelector('#toggleMobileNav');
-// const toggleMobileNavIcon = document.querySelector('#toggleMobileNav i');
-// const navLinkNotCurrent = document.querySelector(
-//   'a:not([aria-current="page"])'
-// );
+const nav = document.querySelector('nav');
+const navLinks = document.querySelector('nav ul');
 
-// // Show / Hide Navbar
+const toggleMobileNav = document.querySelector('#toggleMobileNav');
+const toggleMobileNavIcon = document.querySelector('#toggleMobileNav i');
 
-// mobileNavBtn.addEventListener('click', e => {
-//   if (nav.classList.contains('visible')) {
-//     hideNavbar(nav);
-//   } else {
-//     showNavbar(nav);
-//   }
-// });
+const navLink = document.querySelectorAll('nav a');
+const navLinkCurrent = document.querySelector('nav a[aria-current="page"]');
 
-// // Close when clicking outside navbar
+// Show / Hide Navbar
 
-// document.addEventListener('click', function handleClickOutsideBox(event) {
-//   if (nav.classList.contains('visible')) {
-//     if (!nav.contains(event.target) && !navbar.contains(event.target)) {
-//       hideNavbar(nav);
-//     }
-//   }
-// });
+toggleMobileNav.addEventListener('click', e => {
+  if (navLinks.classList.contains('nav-visible')) {
+    hideNavbar(navLinks);
+  } else {
+    showNavbar(navLinks);
+  }
+});
 
-// // Helper Functions
+// Close when clicking outside navbar
 
-// const hideNavbar = nav => {
-//   mobileNavBtn.setAttribute('aria-expanded', 'false');
-//   mobileNavBtnIcon.classList.replace('bi-x-lg', 'bi-list');
-//   nav.classList.add('hidden');
-//   setTimeout(() => {
-//     nav.classList.remove('visible');
-//     nav.classList.remove('hidden');
-//   }, 150);
-// };
+document.addEventListener('click', function handleClickOutsideBox(event) {
+  if (navLinks.classList.contains('nav-visible')) {
+    if (!navLinks.contains(event.target) && !nav.contains(event.target)) {
+      hideNavbar(navLinks);
+    }
+  }
+});
 
-// const showNavbar = nav => {
-//   mobileNavBtn.setAttribute('aria-expanded', 'true');
-//   mobileNavBtnIcon.classList.replace('bi-list', 'bi-x-lg');
-//   nav.classList.add('visible');
-// };
+// Highlight Active Page
+
+navLink.forEach(link => {
+  if (link.href === window.location.href) {
+    link.setAttribute('aria-current', 'page');
+  }
+});
+
+// Helper Functions
+
+const hideNavbar = navLinks => {
+  toggleMobileNav.setAttribute('aria-expanded', 'false');
+  toggleMobileNavIcon.classList.replace('bi-x-square', 'bi-list');
+  navLinks.classList.add('nav-hidden');
+  navLinks.classList.remove('nav-visible');
+};
+
+const showNavbar = navLinks => {
+  toggleMobileNav.setAttribute('aria-expanded', 'true');
+  toggleMobileNavIcon.classList.replace('bi-list', 'bi-x-square');
+  navLinks.classList.remove('nav-hidden');
+  navLinks.classList.add('nav-visible');
+};
