@@ -28,6 +28,13 @@ section {
   }
 }
 
+.home section {
+  margin-block: $home__section__margin-block;
+  @include mqSmall {
+    margin-block: $home__section__margin-block-mobile;
+  }
+}
+
 img {
   display: block;
   user-select: none;

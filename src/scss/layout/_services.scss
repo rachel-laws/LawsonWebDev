@@ -1,19 +1,141 @@
 @use '../abstracts' as *;
 
-.process {
-  .process__heading {
-    img {
-      width: 16rem;
+.services {
+  @include flexCenterColumn;
+  gap: 3rem;
+
+  h1,
+  h2 {
+    font-family: 'Roboto Slab', serif;
+    text-align: center;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #363636;
+    text-transform: uppercase;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid $gold-txt;
+    margin-bottom: 4rem;
+  }
+
+  h2 {
+    font-size: 1.3rem;
+  }
+}
+
+// Main Services
+
+// Card Container
+
+.main-services__container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.25rem;
+
+  @include mqMedium {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include mqSmall {
+    grid-template-columns: 1fr;
+  }
+}
+
+// Cards
+
+.main-services__card {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: stretch;
+
+  // Slide down cover card on hover
+  &:hover .card__outer,
+  &:focus-within .card__outer {
+    transform: translateY(120%);
+    opacity: 0;
+  }
+}
+
+// Inner Card
+.card__inner {
+  position: relative;
+  @include flexColumn;
+
+  z-index: -2;
+  gap: 1rem;
+  padding: 2.5rem 2.5rem;
+
+  color: $white-txt;
+  line-height: 1.8;
+  font-weight: 500;
+
+  background: $gray-bg;
+  outline: 1px solid #ccb58779;
+  outline-offset: -10px;
+  border: 2px solid $gold-txt;
+  box-shadow: 2px 2px 5px rgb(0 0 0 / 0.2);
+}
+
+// Outer Card
+.card__outer {
+  position: absolute;
+  @include flexCenterColumn;
+  inset: 0rem;
+  gap: 0.75rem;
+
+  font-family: 'Roboto Slab', serif;
+  font-size: 1.6rem;
+  color: $white-txt;
+
+  outline: 1px solid #ccb58779;
+  outline-offset: -10px;
+  border: 2px solid $gold-txt;
+
+  transition: 200ms ease;
+
+  i {
+    font-size: 3rem;
+    margin-top: -3rem;
+  }
+
+  // Image
+  &::after {
+    @include pseudoElement;
+    inset: 0;
+    opacity: 0.15;
+    z-index: -1;
+  }
+
+  // Overlay
+  &::before {
+    @include pseudoElement;
+    inset: 0;
+    z-index: -1;
+    background: $dark-bg;
+  }
+
+  // Hide on mobile
+  @include mqSmall {
+    display: none;
+  }
+}
+
+// Card Backgrounds
+@each $card in ('develop', 'design', 'uiux', 'seo', 'strategy', 'hosting') {
+  .card__#{$card} {
+    &::after {
+      background-image: url('/assets/img/services/#{$card}-card.png');
     }
   }
 }
 
-.process__container {
-  @include flexCenter;
-}
+// Process
 
 .process__video {
   pointer-events: none;
-  box-shadow: 0px 0px 15px 1px rgb(0 0 0 / 0.25);
+  box-shadow: 0px 0px 15px 1px rgb(0 0 0 / 0.15);
   margin-bottom: 5rem;
 }

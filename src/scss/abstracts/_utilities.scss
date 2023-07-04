@@ -23,11 +23,13 @@
   @include flexCenter;
   gap: 2.5rem;
   margin-bottom: 2rem;
+  font-size: 2.4rem;
 
   @include mqMedium {
     flex-direction: column;
     text-align: center;
     gap: 1.5rem;
+    font-size: 2.2rem;
   }
 }
 

@@ -11,6 +11,9 @@
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@700&family=Raleway:ital,wght@0,300;0,400;0,500;0,600;1,100&family=Source+Code+Pro&display=swap" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400&display=swap" />
     <!-- Bootstrap Icons -->
     <link
       rel="stylesheet"
@@ -38,30 +41,117 @@
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
-    <main>
+    <header class="services__header"></header>
+    <main class="services">
+      <section class="main-services">
+        <h1>Main Services</h1>
+        <div class="main-services__container">
+          <div class="main-services__card">
+            <div class="card__outer card__develop">
+              <i class="bi bi-code-slash"></i>
+              <p>Web Development</p>
+            </div>
+            <div class="card__inner">
+              <h2>Web Development</h2>
+              <p>
+                I program websites using HTML, Sass, JavaScript, and GitHub for
+                version control. Every detail is checked and tested to ensure
+                consistent functionality. If there's a specific feature you have
+                in mind, let's talk about how to bring it to life!
+              </p>
+            </div>
+          </div>
+          <div class="main-services__card">
+            <div class="card__outer card__design">
+              <i class="bi bi-palette"></i>
+              <p>Web Design</p>
+            </div>
+            <div class="card__inner">
+              <h2>Web Design</h2>
+              <p>
+                I am experienced with Figma, CSS, Sass, and responsive web
+                design. Need some custom content? I create graphics, SVGs,
+                custom animations, and more. Finding the aesthetics that will
+                emulate your brand's goals and style is a priority to me.
+              </p>
+            </div>
+          </div>
+          <div class="main-services__card">
+            <div class="card__outer card__uiux">
+              <i class="bi bi-window"></i>
+              <p>UI/UX</p>
+            </div>
+            <div class="card__inner">
+              <h2>UI/UX</h2>
+              <p>
+                User experience matters. By understanding the goals you have for
+                your site, I strategically create great user experiences with
+                intuitive interfaces that will grab attention and keep visitors
+                on your site to see more.
+              </p>
+            </div>
+          </div>
+          <div class="main-services__card">
+            <div class="card__outer card__seo">
+              <i class="bi bi-search"></i>
+              <p>SEO</p>
+            </div>
+            <div class="card__inner">
+              <h2>SEO</h2>
+              <p>
+                Knowing what search engines look for in websites is important to
+                get more visitors to the site. I always keep SEO in mind while
+                creating a site, and do a full optimization review before it
+                gets launched.
+              </p>
+            </div>
+          </div>
+          <div class="main-services__card">
+            <div class="card__outer card__strategy">
+              <i class="bi bi-diagram-3"></i>
+              <p>Brand Strategy</p>
+            </div>
+            <div class="card__inner">
+              <h2>Brand Strategy</h2>
+              <p>
+                Creating a digital strategy to grab the interest and keep the
+                attention of your users is a must. During our meetings I can
+                offer advice and ideas on how to best execute smart layouts,
+                branding, and an effective call-to-action.
+              </p>
+            </div>
+          </div>
+          <div class="main-services__card">
+            <div class="card__outer card__hosting">
+              <i class="bi bi-gear"></i>
+              <p>Hosting Set-Up</p>
+            </div>
+            <div class="card__inner">
+              <h2>Hosting Set-Up</h2>
+              <p>
+                I will set up your website for you through shared hosting
+                servers which offer reliability, affordable prices, and great
+                performance. You will have full control of the site post-launch,
+                though I will be available if you need help with updates or
+                maintenance in the future!
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
       <section id="process" class="process">
-        <div class="process__heading heading">
-          <img
-            src="/assets/svg/steps.svg"
-            alt="Arrows circling around blue gears" />
-          <h2>
-            See the process,
-            <span class="special-font block">step by step</span>
-          </h2>
-        </div>
-        <div class="process__container">
-          <iframe
-            class="process__video"
-            src="https://player.vimeo.com/video/841661658?badge=0&controls=0&autoplay=1&loop=1&title=0&autopause=0&player_id=0&app_id=58479"
-            width="838"
-            height="472"
-            frameborder="0"
-            autoplay="true"
-            loading="lazy"
-            allow="autoplay; fullscreen; picture-in-picture"
-            allowfullscreen
-            title="Lawson Web Development - Step by Step"></iframe>
-        </div>
+        <h2>See the step-by-step process</h2>
+        <iframe
+          class="process__video"
+          src="https://player.vimeo.com/video/841661658?badge=0&controls=0&autoplay=1&loop=1&title=0&autopause=0&player_id=0&app_id=58479"
+          width="838.5"
+          height="472"
+          frameborder="0"
+          autoplay="true"
+          loading="lazy"
+          allow="autoplay; fullscreen; picture-in-picture"
+          allowfullscreen
+          title="Lawson Web Development - Step by Step"></iframe>
       </section>
     </main>
     <footer>
@@ -95,5 +185,6 @@
         </p>
       </div>
     </footer>
+    <script src="/dist/script.js"></script>
   </body>
 </html>
