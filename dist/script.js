@@ -7,7 +7,6 @@ const toggleMobileNav = document.querySelector('#toggleMobileNav');
 const toggleMobileNavIcon = document.querySelector('#toggleMobileNav i');
 
 const navLink = document.querySelectorAll('nav a');
-const navLinkCurrent = document.querySelector('nav a[aria-current="page"]');
 
 // Show / Hide Navbar
 
@@ -52,3 +51,40 @@ const showNavbar = navLinks => {
   navLinks.classList.remove('nav-hidden');
   navLinks.classList.add('nav-visible');
 };
+
+// Scroll Animations
+
+// function debounce(func, wait = 10, immediate = true) {
+//   let timeout;
+//   return function () {
+//     let context = this,
+//       args = arguments;
+//     let later = function () {
+//       timeout = null;
+//       if (!immediate) func.apply(context, args);
+//     };
+//     let callNow = immediate && !timeout;
+//     clearTimeout(timeout);
+//     timeout = setTimeout(later, wait);
+//     if (callNow) {
+//       func.apply(context, args);
+//     }
+//   };
+// }
+
+const slideCards = document.querySelectorAll('.timeline__card');
+
+const checkCard = () => {
+  const slideIn = (window.innerHeight / 2) * 1.22;
+  slideCards.forEach(card => {
+    const cardTop = card.getBoundingClientRect().top;
+
+    if (cardTop < slideIn) {
+      card.classList.add('active');
+    } else {
+      card.classList.remove('active');
+    }
+  });
+};
+
+window.addEventListener('scroll', checkCard);

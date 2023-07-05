@@ -2,20 +2,22 @@
 
 .intro {
   .intro__heading {
-    img {
-      width: 17rem;
+    margin-bottom: 4rem;
 
-      @include mqMedium {
-        width: 14rem;
-      }
+    @include mqSmall {
+      margin-bottom: 3rem;
+    }
+
+    img {
+      width: 14.5rem;
+      margin-bottom: 0.75rem;
     }
   }
 
   .intro__services {
     @include threeColumnGrid;
+    gap: 4vw;
     padding-inline: 3rem;
-    gap: 4rem;
-    margin-top: 4rem;
 
     @include mqMedium {
       grid-template-columns: 1fr;
@@ -23,27 +25,71 @@
       padding-inline: 1rem;
     }
 
-    @include mqSmall {
-      margin-top: 2.5rem;
-    }
-
     img {
-      width: 10rem;
+      margin-inline: auto;
+      width: 7rem;
+      z-index: 1;
     }
   }
 
   .intro__service {
     @include flexColumn;
-    align-items: center;
-    gap: 1.5rem;
-    height: 25rem;
+    justify-content: flex-start;
+    position: relative;
+    overflow: hidden;
+    gap: 1rem;
+
+    height: 24rem;
     min-width: 16rem;
     max-width: 25rem;
     margin: auto;
+    padding: 1.5rem 2rem 1.75rem;
+
     line-height: 1.8;
+    background: linear-gradient(33deg, #f1f1f1, #fff);
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15);
+
+    transition: 200ms ease-in;
 
     @include mqMedium {
       height: auto;
+    }
+
+    &::after {
+      @include pseudoElement;
+      bottom: -2rem;
+      right: -2rem;
+      width: 4rem;
+      height: 4rem;
+
+      background: linear-gradient(33deg, #a18650, #e6ce9f);
+      border-radius: 50%;
+      transition: 200ms ease-in;
+    }
+
+    &::before {
+      @include pseudoElement;
+      top: -3.1rem;
+      left: -3rem;
+      right: -3rem;
+      height: 0%;
+      border-radius: 50%;
+      background: linear-gradient(33deg, #a18650, #e6ce9f);
+      transition: 200ms ease-in;
+    }
+
+    &:hover::before {
+      height: 12rem;
+    }
+
+    &:hover::after {
+      height: 0rem;
+    }
+
+    &:hover {
+      background: $gray-bg;
+      color: $white-txt;
     }
   }
 }
@@ -53,8 +99,10 @@
   gap: 6vw;
   width: 100%;
   padding-block: 4rem;
+
   background: $dark-bg;
-  box-shadow: 0px 0px 15px rgb(0 0 0 / 0.25);
+  border-block: 2px solid $gold-txt;
+  box-shadow: 0px 0px 15px rgb(0 0 0 / 0.15);
 
   @include mqMedium {
     flex-direction: column;
@@ -65,10 +113,15 @@
     width: 14.5rem;
     height: 3.2rem;
     padding: 0.75rem 1.5rem;
+
+    color: $white-txt;
     text-align: center;
     font-size: 1.2rem;
     font-weight: 500;
+
+    background: $dark-bg;
     box-shadow: -3px 3px 6px black;
+
     transition: 200ms ease;
 
     &:active {
@@ -78,8 +131,6 @@
 
   .cta__button-services,
   .cta__button-pricing {
-    color: $white-txt;
-    background: $dark-bg;
     border: 3px solid $light-bg;
 
     &:hover {
@@ -89,9 +140,7 @@
   }
 
   .cta__button-consultation {
-    color: $black-txt;
-    background: $light-bg;
-    border: 3px solid transparent;
+    border: 3px solid $gold-txt;
 
     &:hover {
       color: $white-txt;
@@ -170,7 +219,12 @@
   padding-block: 4rem;
   padding-inline: 23vw;
   background: $dark-bg;
-  box-shadow: 0px 0px 15px rgb(0 0 0 / 0.25);
+  border-block: 2px solid $gold-txt;
+  box-shadow: 0px 0px 15px rgb(0 0 0 / 0.15);
+
+  @include mqMedium {
+    padding-inline: 10vw;
+  }
 
   p {
     position: relative;
@@ -214,9 +268,5 @@
       font-size: 1rem;
       margin-top: 1rem;
     }
-  }
-
-  @include mqSmall {
-    padding-inline: 10vw;
   }
 }

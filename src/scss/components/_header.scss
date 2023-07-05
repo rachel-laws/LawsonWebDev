@@ -1,43 +1,30 @@
 @use '../abstracts' as *;
 
 .home__header {
+  max-width: 100vw;
+
   .header__img {
     @include flexCenter;
-    max-width: 100vw;
-    height: 85vh;
+    height: 55vh;
     overflow: hidden;
-    background-image: url('/assets/img/header_bg.jpeg');
+    background-image: url('/assets/img/header_home.jpg');
     background-size: cover;
-    background-attachment: fixed;
-    background-position: 13.5%;
+    background-position: 20% -50%;
 
     @include mqSmall {
-      height: 40vh;
+      height: 30vh;
+      margin-top: 3rem;
+      background-position: 70%;
       background-attachment: scroll;
-      background-position: 75%;
-    }
-  }
-
-  .header__title {
-    width: 19rem;
-    max-width: 23rem;
-    margin-top: 3.1rem;
-    border-radius: 50%;
-    outline: 8px solid $dark-bg;
-    outline-offset: -9px;
-    box-shadow: 0px 0px 40px 5px #ffe2d87e, 0px 0px 15px #ffffff9e;
-
-    @include mqSmall {
-      display: none;
     }
   }
 
   .header__bottom {
     @include flexCenter;
-    max-width: 100vw;
     background: $dark-bg;
     box-shadow: 0px 1px 8px rgb(0 0 0 / 0.35);
     padding-block: 1rem;
+    border-block: 1px solid $gold-txt;
 
     ul {
       @include flexCenter;
@@ -62,7 +49,7 @@
 }
 
 .services__header {
-  background-image: url('/assets/img/services/services_bg.jpg');
+  background-image: url('/assets/img/services/header_services.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;

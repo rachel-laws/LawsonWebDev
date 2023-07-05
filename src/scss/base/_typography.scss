@@ -13,25 +13,58 @@ h2 {
   letter-spacing: 0.75px;
 }
 
-h3 {
+.home h1,
+.home h2 {
+  font-size: 2.8rem;
+
+  @include mqMedium {
+    font-size: 2rem;
+  }
+}
+
+.intro__service h2 {
+  text-align: center;
+  font-family: 'Roboto Slab', serif;
   font-weight: 500;
-  font-size: 1.65rem;
-  letter-spacing: 0.75px;
+  font-size: 1.7rem;
+}
+
+.services {
+  h1,
+  h2 {
+    font-family: 'Roboto Slab', serif;
+    text-align: center;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #363636;
+    text-transform: uppercase;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid $gold-txt;
+    margin-bottom: 4rem;
+  }
+
+  h2 {
+    font-size: 1.3rem;
+  }
 }
 
 .special-font {
   font-family: 'Josefin Sans', sans-serif;
-  font-size: 3.8rem;
+  font-size: 3.3rem;
   font-weight: 700;
-  color: #39b54a;
+  background: linear-gradient(#f5d28c, #8f6f30);
+  text-shadow: 2px 2px #c8963448;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
 
   @include mqMedium {
     font-size: 2.4rem;
   }
-}
-
-.process .special-font {
-  color: #3f37d6;
 }
 
 .code-font {

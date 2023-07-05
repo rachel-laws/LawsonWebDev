@@ -2,6 +2,13 @@
 
 // Utility Classes
 
+.scroll-tracker {
+  height: 0.5rem;
+  background: red;
+  inset: 3rem 0 auto;
+  position: fixed;
+}
+
 .block {
   display: block;
   @include mqSmall {
@@ -23,13 +30,11 @@
   @include flexCenter;
   gap: 2.5rem;
   margin-bottom: 2rem;
-  font-size: 2.4rem;
 
   @include mqMedium {
     flex-direction: column;
     text-align: center;
-    gap: 1.5rem;
-    font-size: 2.2rem;
+    gap: 1rem;
   }
 }
 
