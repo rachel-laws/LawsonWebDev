@@ -11,6 +11,10 @@
     img {
       width: 14.5rem;
       margin-bottom: 0.75rem;
+
+      @include mqMedium {
+        order: 2;
+      }
     }
   }
 
@@ -33,10 +37,10 @@
   }
 
   .intro__service {
-    @include flexColumn;
-    justify-content: flex-start;
     position: relative;
     overflow: hidden;
+    @include flexColumn;
+    justify-content: flex-start;
     gap: 1rem;
 
     height: 24rem;
@@ -45,12 +49,12 @@
     margin: auto;
     padding: 1.5rem 2rem 1.75rem;
 
-    line-height: 1.8;
-    background: linear-gradient(33deg, #f1f1f1, #fff);
-    border-radius: 5px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15);
-
-    transition: 200ms ease-in;
+    background: $card-bg;
+    line-height: $card-lh;
+    border: $card-border;
+    border-radius: $card-br;
+    box-shadow: $card-shadow;
+    transition: $ease-in;
 
     @include mqMedium {
       height: auto;
@@ -63,9 +67,9 @@
       width: 4rem;
       height: 4rem;
 
-      background: linear-gradient(33deg, #a18650, #e6ce9f);
+      background: $card-accent;
       border-radius: 50%;
-      transition: 200ms ease-in;
+      transition: $ease-in;
     }
 
     &::before {
@@ -75,8 +79,8 @@
       right: -3rem;
       height: 0%;
       border-radius: 50%;
-      background: linear-gradient(33deg, #a18650, #e6ce9f);
-      transition: 200ms ease-in;
+      background: $card-accent;
+      transition: $ease-in;
     }
 
     &:hover::before {
@@ -94,59 +98,18 @@
   }
 }
 
-.cta__buttons {
+.cta__links {
   @include flexCenter;
-  gap: 6vw;
+  gap: 7vw;
   width: 100%;
   padding-block: 4rem;
-
   background: $dark-bg;
-  border-block: 2px solid $gold-txt;
-  box-shadow: 0px 0px 15px rgb(0 0 0 / 0.15);
+  border-block: $standard-border;
+  box-shadow: $section-shadow;
 
   @include mqMedium {
     flex-direction: column;
     gap: 2rem;
-  }
-
-  a {
-    width: 14.5rem;
-    height: 3.2rem;
-    padding: 0.75rem 1.5rem;
-
-    color: $white-txt;
-    text-align: center;
-    font-size: 1.2rem;
-    font-weight: 500;
-
-    background: $dark-bg;
-    box-shadow: -3px 3px 6px black;
-
-    transition: 200ms ease;
-
-    &:active {
-      transform: translateX(-3px);
-    }
-  }
-
-  .cta__button-services,
-  .cta__button-pricing {
-    border: 3px solid $light-bg;
-
-    &:hover {
-      color: $black-txt;
-      background: $light-bg;
-    }
-  }
-
-  .cta__button-consultation {
-    border: 3px solid $gold-txt;
-
-    &:hover {
-      color: $white-txt;
-      background: $dark-bg;
-      border-color: $light-bg;
-    }
   }
 }
 
@@ -157,10 +120,10 @@
     margin-top: 0.5rem;
 
     img {
-      width: 9rem;
+      width: 8rem;
       animation: wiggle 8s infinite;
 
-      @include mqMedium {
+      @include mqSmall {
         width: 7rem;
       }
     }
@@ -198,7 +161,7 @@
       height: min-content;
       width: max-content;
 
-      li:not(:nth-of-type(10)) {
+      li:not(:last-of-type) {
         margin-bottom: 0.8rem;
       }
 
@@ -208,7 +171,7 @@
         left: -1.5rem;
         height: 100%;
         width: 0.25rem;
-        background: rgba(0, 0, 0, 0.108);
+        background: #0000001c;
         border-radius: 1px;
       }
     }
@@ -219,26 +182,22 @@
   padding-block: 4rem;
   padding-inline: 23vw;
   background: $dark-bg;
-  border-block: 2px solid $gold-txt;
-  box-shadow: 0px 0px 15px rgb(0 0 0 / 0.15);
+  border-block: $standard-border;
+  box-shadow: $section-shadow;
 
   @include mqMedium {
-    padding-inline: 10vw;
+    padding-inline: 8vw;
   }
 
   p {
     position: relative;
-    line-height: 1.6;
-    font-size: 1.3rem;
-    background: linear-gradient(33deg, #c4c4c4, #f1f1f1, #eaeaea);
-    font-weight: 500;
     padding: 2.5rem 4rem;
+    background: $quote-bg;
     border-radius: 1px;
     box-shadow: -4px 4px 25px black;
 
     @include mqSmall {
-      font-size: 1.2rem;
-      padding: 2rem 2rem;
+      padding: 2rem;
     }
 
     &::after {
@@ -246,9 +205,6 @@
       content: '❝';
       top: -5rem;
       left: -1.25rem;
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: 8rem;
-      color: $gold-txt;
       text-shadow: 5px 4px 0px $dark-bg;
     }
 
@@ -257,15 +213,11 @@
       content: '❞';
       bottom: -8.5rem;
       right: -1.3rem;
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: 8rem;
-      color: $gold-txt;
       text-shadow: -5px -4px 0px $dark-bg;
     }
 
     span {
       display: block;
-      font-size: 1rem;
       margin-top: 1rem;
     }
   }

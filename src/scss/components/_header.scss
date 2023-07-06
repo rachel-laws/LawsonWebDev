@@ -1,37 +1,18 @@
 @use '../abstracts' as *;
 
-.home__header {
+header {
   max-width: 100vw;
-
-  .header__img {
-    @include flexCenter;
-    height: 55vh;
-    overflow: hidden;
-    background-image: url('/assets/img/header_home.jpg');
-    background-size: cover;
-    background-position: 20% -50%;
-
-    @include mqSmall {
-      height: 30vh;
-      margin-top: 3rem;
-      background-position: 70%;
-      background-attachment: scroll;
-    }
-  }
 
   .header__bottom {
     @include flexCenter;
-    background: $dark-bg;
-    box-shadow: 0px 1px 8px rgb(0 0 0 / 0.35);
     padding-block: 1rem;
-    border-block: 1px solid $gold-txt;
+    background: $dark-bg;
+    border-block: $thin-border;
+    box-shadow: 0px 1px 8px rgb(0 0 0 / 0.35);
 
     ul {
       @include flexCenter;
       gap: 1rem;
-      color: $gold-txt;
-      text-transform: uppercase;
-      font-weight: 500;
 
       @include mqSmall {
         flex-direction: column;
@@ -43,18 +24,35 @@
   .header__diamond {
     width: 0.4rem;
     height: 0.4rem;
-    background: $gold-txt;
+    background: $gold;
     transform: rotate(45deg);
   }
 }
 
+.home__header {
+  .header__img {
+    @include flexCenter;
+    overflow: hidden;
+    height: 55vh;
+    background-image: url('/assets/img/header_home.jpg');
+    background-size: cover;
+    background-position: 20% -50%;
+
+    @include mqSmall {
+      height: 30vh;
+      margin-top: 3rem;
+      background-position: 70%;
+      background-attachment: scroll;
+    }
+  }
+}
+
 .services__header {
+  height: 40vh;
   background-image: url('/assets/img/services/header_services.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  height: 40vh;
-  max-width: 100vw;
   margin-top: 3.1rem;
   box-shadow: 0px 1px 8px rgb(0 0 0 / 0.35);
 }
