@@ -11,6 +11,9 @@
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@700&family=Raleway:ital,wght@0,300;0,400;0,500;0,600;1,100&family=Source+Code+Pro&display=swap" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400&display=swap" />
     <!-- Bootstrap Icons -->
     <link
       rel="stylesheet"
@@ -23,7 +26,7 @@
     <nav id="nav">
       <img
         src="/assets/svg/header_logo.svg"
-        alt="Lawson Web Development logo" />
+        alt="Lawson Web Development golden tree logo" />
       <button
         id="toggleMobileNav"
         class="nav__toggle"
@@ -38,7 +41,101 @@
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
-    <main></main>
+    <main class="contact">
+      <section class="contact__form">
+        <form
+          action="https://formsubmit.co/rachel_lawson@lawsonwebdevelopment.com"
+          method="POST">
+          <input type="hidden" name="_next" value="/dist/html/thankyou.html" />
+          <input type="hidden" name="_subject" value="New Form Submission" />
+          <input type="hidden" name="_captcha" value="false" />
+          <fieldset id="contactInfo" class="contact__info">
+            <legend>Have a question? Contact me!</legend>
+            <label for="contact_fullName">
+              Full Name
+              <input id="contact_fullName" name="name" type="text" required />
+            </label>
+            <label for="contact_email">
+              Email Address
+              <input id="contact_email" name="email" type="email" required />
+            </label>
+            <label for="contact_message">
+              Your Message
+              <textarea
+                id="contact_message"
+                name="message"
+                cols="30"
+                rows="10"
+                required></textarea>
+            </label>
+            <div class="request__checkbox">
+              <label for="consult_request">Request a Consultation</label>
+              <input id="consult_request" name="consult" type="checkbox" />
+            </div>
+          </fieldset>
+          <fieldset id="consultSchedule" class="consult__schedule">
+            <legend>Request a Free Consultation</legend>
+            <div class="date-time-picker">
+              <label for="consult_date">
+                Preferred Date
+                <input
+                  id="consult_date"
+                  name="date"
+                  type="date"
+                  max="2023-12-31" />
+              </label>
+              <div class="time-picker">
+                <label for="timePickerHour">Preferred Time</label>
+                <div class="time-picker__selects">
+                  <select
+                    id="timePickerHour"
+                    name="hour"
+                    class="time-picker__select-hour">
+                    <option value="">--</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                  </select>
+                  <span>:</span>
+                  <select
+                    id="timePickerMin"
+                    name="minute"
+                    class="time-picker__select-min">
+                    <option value="">--</option>
+                    <option value="00">00</option>
+                    <option value="15">15</option>
+                    <option value="30">30</option>
+                    <option value="45">45</option>
+                  </select>
+                  <p id="timeOfDay"></p>
+                </div>
+              </div>
+            </div>
+            <label for="consult_description">
+              Brief Project Description
+              <textarea
+                id="consult_description"
+                name="description"
+                cols="30"
+                rows="10"></textarea>
+            </label>
+          </fieldset>
+          <input
+            type="submit"
+            id="submitForm"
+            class="contact__submit"
+            value="Send" />
+        </form>
+      </section>
+    </main>
     <footer>
       <div class="footer__left">
         <img
@@ -50,8 +147,7 @@
         </div>
       </div>
       <p class="footer__email">
-        <i class="bi bi-envelope"></i>
-        info@lawsonwebdevelopment.com
+        <i class="bi bi-envelope"></i> info@lawsonwebdevelopment.com
       </p>
       <div class="footer__right">
         <div class="footer__question">
@@ -62,7 +158,7 @@
             loading="lazy" />
           <p>Have a project in mind?</p>
         </div>
-        <a class="footer__consultation" href="/dist/html/contact.html">
+        <a class="footer__btn btn" href="/dist/html/contact.html">
           Schedule a Consultation
         </a>
         <p class="footer__copyright">

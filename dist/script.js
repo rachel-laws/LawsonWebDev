@@ -42,35 +42,19 @@ const hideNavbar = navLinks => {
   toggleMobileNav.setAttribute('aria-expanded', 'false');
   toggleMobileNavIcon.classList.replace('bi-x-square', 'bi-list');
   navLinks.classList.add('nav-hidden');
-  navLinks.classList.remove('nav-visible');
+  setTimeout(() => {
+    navLinks.classList.remove('nav-visible');
+    navLinks.classList.remove('nav-hidden');
+  }, 200);
 };
 
 const showNavbar = navLinks => {
   toggleMobileNav.setAttribute('aria-expanded', 'true');
   toggleMobileNavIcon.classList.replace('bi-list', 'bi-x-square');
-  navLinks.classList.remove('nav-hidden');
   navLinks.classList.add('nav-visible');
 };
 
-// Scroll Animations
-
-// function debounce(func, wait = 10, immediate = true) {
-//   let timeout;
-//   return function () {
-//     let context = this,
-//       args = arguments;
-//     let later = function () {
-//       timeout = null;
-//       if (!immediate) func.apply(context, args);
-//     };
-//     let callNow = immediate && !timeout;
-//     clearTimeout(timeout);
-//     timeout = setTimeout(later, wait);
-//     if (callNow) {
-//       func.apply(context, args);
-//     }
-//   };
-// }
+// Slide-in Cards
 
 const slideCards = document.querySelectorAll('.timeline__card');
 
@@ -88,3 +72,51 @@ const checkCard = () => {
 };
 
 window.addEventListener('scroll', checkCard);
+
+// Contact form
+
+// AM / PM
+const timePickerHour = document.querySelector('#timePickerHour');
+const timeOfDay = document.querySelector('#timeOfDay');
+timePickerHour.addEventListener('change', e => {
+  switch (timePickerHour.value) {
+    case '9':
+      timeOfDay.textContent = 'AM (EDT)';
+      break;
+    case '10':
+      timeOfDay.textContent = 'AM (EDT)';
+      break;
+    case '11':
+      timeOfDay.textContent = 'AM (EDT)';
+      break;
+    case '':
+      timeOfDay.textContent = '';
+      break;
+    default:
+      timeOfDay.textContent = 'PM (EDT)';
+  }
+});
+
+// Request consultation checkbox
+const requestBtn = document.querySelector('#consult_request');
+requestBtn.addEventListener('change', e => {
+  if (requestBtn.checked) {
+    consultSchedule.style.animation = 'slideDown 200ms ease-out 1';
+    setTimeout(() => {
+      consultSchedule.style.display = 'block';
+      consultSchedule.style.transform = 'translateY(0rem)';
+    }, 200);
+  } else {
+    consultSchedule.style.animation = 'slideUp 200ms ease-out 1';
+    setTimeout(() => {
+      consultSchedule.style.transform = 'translateY(-2rem)';
+      consultSchedule.style.display = 'none';
+    }, 200);
+  }
+});
+
+// Minimum schedule date
+const currentDate = new Date().toLocaleDateString('fr-ca');
+const dateSelect = document.querySelector('#consult_date');
+dateSelect.value = currentDate;
+dateSelect.min = currentDate;

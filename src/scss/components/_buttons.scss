@@ -1,28 +1,101 @@
 @use '../abstracts' as *;
 
-// Footer Consultation Link
+// Nav Button
 
-.footer__consultation {
-  margin-bottom: 0.5rem;
-  padding: 1rem 1.5rem;
-  border: 3px solid $gold-txt;
-  box-shadow: -3px 3px 6px black;
-  transition: 200ms ease;
-
+.nav__toggle {
+  display: none;
+  font-size: 1.7rem;
+  z-index: 999;
+  height: 2.2rem;
+  width: 2.2rem;
+  background: transparent;
   color: $white-txt;
-  font-size: 1.2rem;
-  letter-spacing: 0.5px;
-  font-weight: 500;
-  text-align: center;
 
-  &:hover {
-    color: $black-txt;
-    background: $gold-txt;
-    border-color: $dark-bg;
+  transition: 150ms ease;
+
+  &:hover,
+  &:focus-visible {
+    transform: scale(1.13);
   }
 
   &:active {
+    transform: scale(1);
+  }
+
+  @include mqSmall {
+    display: block;
+  }
+
+  .bi-x-square {
+    font-size: 1.4rem;
+  }
+}
+
+// General Buttons
+
+.btn {
+  text-align: center;
+  color: $white-txt;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+
+  border: $btn-border;
+  background: $dark-bg;
+  box-shadow: $btn-shadow;
+  transition: 200ms ease;
+
+  &:active {
     transform: translateX(-3px);
+  }
+}
+
+.contact__submit {
+  border: $btn-border;
+  background: $gray-bg;
+  width: max-content;
+  color: $white-txt;
+  transition: 200ms ease;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  margin-inline: auto;
+  padding: 0.75rem 1.5rem;
+  font-size: 1.2rem;
+
+  &:hover,
+  &:focus-visible {
+    color: $gold;
+    transform: scale(1.06);
+  }
+
+  &:active {
+    transform: scale(1);
+  }
+}
+
+// Home CTA
+
+.cta__links .btn {
+  width: 15rem;
+  height: 3.2rem;
+  padding: 0.75rem 1.5rem;
+  font-size: 1.2rem;
+
+  &:hover {
+    border-color: $white-txt;
+  }
+}
+
+// Footer Consultation
+
+.footer__btn {
+  margin-bottom: 0.5rem;
+  padding: 1rem 1.5rem;
+  font-size: 1.2rem;
+
+  &:hover {
+    color: $black-txt;
+    background: $gold;
+    border-color: $dark-bg;
   }
 
   @include mqSmall {
