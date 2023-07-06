@@ -4,7 +4,41 @@
 
 body {
   font-family: 'Raleway', sans-serif;
+  color: $black-txt;
 }
+
+// Nav
+
+nav a {
+  color: $white-txt;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+// Header
+
+header ul {
+  color: $gold;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+// Footer
+
+footer {
+  color: #909090;
+  font-size: 0.8rem;
+}
+
+.footer__question {
+  p {
+    color: $gold;
+    font-size: 1.4rem;
+  }
+}
+
+// Headings
 
 h1,
 h2 {
@@ -18,38 +52,52 @@ h2 {
   font-size: 2.8rem;
 
   @include mqMedium {
+    font-size: 2.4rem;
+  }
+
+  @include mqSmall {
     font-size: 2rem;
   }
 }
 
-.intro__service h2 {
-  text-align: center;
-  font-family: 'Roboto Slab', serif;
-  font-weight: 500;
-  font-size: 1.7rem;
-}
-
-.services {
+.services,
+.pricing,
+.contact {
   h1,
-  h2 {
+  h2,
+  h3 {
     font-family: 'Roboto Slab', serif;
     text-align: center;
   }
 
   h1 {
     font-size: 1.5rem;
-    font-weight: 600;
-    color: #363636;
-    text-transform: uppercase;
-    padding-bottom: 2rem;
-    border-bottom: 1px solid $gold-txt;
     margin-bottom: 4rem;
   }
 
   h2 {
+    font-size: 1.7rem;
+    margin-bottom: 4rem;
+  }
+
+  h1,
+  h2 {
+    color: #363636;
+    font-weight: 600;
+    text-transform: uppercase;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid $gold;
+  }
+
+  .main-services h3 {
     font-size: 1.3rem;
+    text-align: center;
+    font-weight: 500;
+    color: $white-txt;
   }
 }
+
+// Special
 
 .special-font {
   font-family: 'Josefin Sans', sans-serif;
@@ -76,25 +124,61 @@ h2 {
   }
 }
 
-// Nav
+// Home
 
-nav a {
-  color: $white-txt;
-  text-decoration: none;
-  text-transform: uppercase;
-  letter-spacing: 1px;
+// Card Title
+.intro__services h2 {
+  font-family: 'Roboto Slab', serif;
+  text-align: center;
+  font-size: 1.6rem;
 }
 
-// Footer
+// Quote
+.home__quote p {
+  line-height: 1.6;
+  font-size: 1.3rem;
+  font-weight: 500;
 
-footer {
-  color: #909090;
-  font-size: 0.8rem;
-}
-
-.footer__question {
-  p {
-    color: $gold-txt;
-    font-size: 1.4rem;
+  @include mqSmall {
+    font-size: 1.2rem;
   }
+
+  &::after,
+  &::before {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 8rem;
+    color: $gold;
+  }
+
+  span {
+    font-size: 1rem;
+  }
+}
+
+// Services
+
+// Service Outer Card
+.card__outer {
+  font-family: 'Roboto Slab', serif;
+  font-size: 1.6rem;
+  color: $white-txt;
+}
+
+// Service Inner Card
+.card__inner {
+  color: $white-txt;
+  line-height: 1.8;
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+.timeline__card {
+  color: $black-txt;
+  line-height: $card-lh;
+}
+
+.timeline__step {
+  font-family: 'Roboto Slab', serif;
+  text-transform: uppercase;
+  color: $white-txt;
 }

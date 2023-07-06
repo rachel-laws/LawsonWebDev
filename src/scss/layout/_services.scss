@@ -5,10 +5,13 @@
   gap: 3rem;
 }
 
-// Main Services
+// Main Services Section
+
+.main-services {
+  margin-bottom: 3rem;
+}
 
 // Card Container
-
 .main-services__container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -20,16 +23,16 @@
 
   @include mqSmall {
     grid-template-columns: 1fr;
+    gap: 0.5rem;
   }
 }
 
 // Cards
-
 .main-services__card {
   position: relative;
-  overflow: hidden;
   display: flex;
   align-items: stretch;
+  overflow: hidden;
 
   // Slide down cover card on hover
   &:hover .card__outer,
@@ -39,26 +42,6 @@
   }
 }
 
-// Inner Card
-.card__inner {
-  position: relative;
-  @include flexColumn;
-
-  z-index: -2;
-  gap: 1rem;
-  padding: 2.5rem 2.5rem;
-
-  color: $white-txt;
-  line-height: 1.8;
-  font-weight: 500;
-
-  background: $gray-bg;
-  outline: 1px solid #ccb58779;
-  outline-offset: -10px;
-  border: 2px solid $gold-txt;
-  box-shadow: 2px 2px 5px rgb(0 0 0 / 0.2);
-}
-
 // Outer Card
 .card__outer {
   position: absolute;
@@ -66,15 +49,15 @@
   inset: 0rem;
   gap: 0.75rem;
 
-  font-family: 'Roboto Slab', serif;
-  font-size: 1.6rem;
-  color: $white-txt;
-
-  outline: 1px solid #ccb58779;
+  outline: $card-outline;
   outline-offset: -10px;
-  border: 2px solid $gold-txt;
+  border: $standard-border;
+  transition: $ease-in;
 
-  transition: 200ms ease-in;
+  // Hide on mobile
+  @include mqSmall {
+    display: none;
+  }
 
   i {
     font-size: 3rem;
@@ -96,11 +79,21 @@
     z-index: -1;
     background: $dark-bg;
   }
+}
 
-  // Hide on mobile
-  @include mqSmall {
-    display: none;
-  }
+// Inner Card
+.card__inner {
+  position: relative;
+  @include flexColumn;
+  z-index: -2;
+  gap: 1rem;
+  padding: 2.5rem 2.5rem;
+
+  background: $gray-bg;
+  border: $standard-border;
+  outline: $card-outline;
+  outline-offset: -10px;
+  box-shadow: $small-shadow;
 }
 
 // Card Backgrounds
@@ -112,15 +105,14 @@
   }
 }
 
-// Process
+// Process Section
 
 .process {
   margin-top: 0rem;
+  margin-bottom: 6rem;
+
   h2 {
-    font-size: 1.9rem;
-    text-align: center;
-    margin-bottom: 6rem;
-    text-transform: uppercase;
+    margin-bottom: 3.5rem;
   }
 }
 
@@ -131,10 +123,11 @@
   width: 1.5rem;
   height: 1.5rem;
   z-index: 3;
-  background-color: $gold-txt;
+
+  background-color: $gold;
   border: 4px solid $light-bg;
   border-radius: 50%;
-  outline: 2px solid $gold-txt;
+  outline: $standard-border;
 }
 
 .process__timeline {
@@ -153,45 +146,25 @@
     height: calc(100% - 11rem);
     z-index: -1;
     border-radius: 2px;
-    background: $gold-txt;
+    background: $gold;
     border-left: 2px solid #baa172;
   }
 }
 
-.timeline__step {
-  width: max-content;
-  padding: 0 0.6rem 0.15rem;
-  text-transform: uppercase;
-  color: $white-txt;
-  background: $gray-bg;
-  position: absolute;
-  align-self: flex-start;
-  font-family: 'Roboto Slab', serif;
-
-  @include mqSmall {
-    position: relative;
-  }
-}
-
-.timeline__step-last {
-  background: #289541;
-  animation: pop 5s infinite ease;
-  align-self: flex-start;
-}
-
 .timeline__card {
   position: relative;
-  margin-left: 1.5rem;
   @include flexColumn;
   align-items: center;
   gap: 0.75rem;
-  line-height: 1.8;
   max-width: 35rem;
+  margin-left: 1.5rem;
   padding: 2rem 3rem;
-  background: linear-gradient(33deg, #f2f2f2, #fff);
-  border-radius: 3px;
-  border: 1px solid #d2d2d2bd;
-  box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.125);
+
+  background: $card-bg;
+  border-radius: $card-br;
+  border: $card-border;
+  box-shadow: $card-shadow;
+
   transform: translateX(50%) scale(0.8);
   opacity: 0;
   transition: all 0.5s;
@@ -207,6 +180,24 @@
       align-items: flex-start;
     }
   }
+}
+
+.timeline__step {
+  position: absolute;
+  align-self: flex-start;
+  width: max-content;
+  padding: 0 0.5rem 1px;
+  background: $gray-bg;
+
+  @include mqSmall {
+    position: relative;
+  }
+}
+
+.timeline__step-last {
+  background: #289541;
+  animation: pop 5s infinite ease;
+  align-self: flex-start;
 }
 
 .active {

@@ -2,27 +2,21 @@
 
 // Utility Classes
 
-.scroll-tracker {
-  height: 0.5rem;
-  background: red;
-  inset: 3rem 0 auto;
-  position: fixed;
-}
-
 .block {
   display: block;
-  @include mqSmall {
+  @include mqMedium {
     display: inline;
   }
 }
 
 .nav-visible {
   display: flex;
+  animation: slideIn 200ms ease 1;
 }
 
 .nav-hidden {
   @include mqSmall {
-    display: none;
+    animation: slideOut 200ms ease 1;
   }
 }
 
@@ -32,9 +26,14 @@
   margin-bottom: 2rem;
 
   @include mqMedium {
+    padding-inline: 3vw;
+  }
+
+  @include mqSmall {
     flex-direction: column;
     text-align: center;
     gap: 1rem;
+    padding-inline: 0;
   }
 }
 

@@ -3,11 +3,15 @@
 $light-bg: #f4f4f4;
 $dark-bg: #121212;
 $gray-bg: #242424;
-
+$card-bg: linear-gradient(33deg, #f2f2f2, #fff);
+$quote-bg: linear-gradient(33deg, #c4c4c4, #f1f1f1, #eaeaea);
 
 // Text
 
 $white-txt: #fefefe;
 $black-txt: #0a0a0a;
 $logo-txt: #ffdead;
-$gold-txt: #ccb587;
+
+// Accents
+$gold: #ccb587;
+$card-accent: linear-gradient(33deg, #a18141, #e8cb8f);
