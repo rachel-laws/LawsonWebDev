@@ -78,48 +78,54 @@ window.addEventListener('scroll', checkCard);
 // AM / PM
 const timePickerHour = document.querySelector('#timePickerHour');
 const timeOfDay = document.querySelector('#timeOfDay');
-timePickerHour.addEventListener('change', e => {
-  switch (timePickerHour.value) {
-    case '9':
-      timeOfDay.textContent = 'AM (EDT)';
-      break;
-    case '10':
-      timeOfDay.textContent = 'AM (EDT)';
-      break;
-    case '11':
-      timeOfDay.textContent = 'AM (EDT)';
-      break;
-    case '':
-      timeOfDay.textContent = '';
-      break;
-    default:
-      timeOfDay.textContent = 'PM (EDT)';
-  }
-});
+if (timePickerHour) {
+  timePickerHour.addEventListener('change', e => {
+    switch (timePickerHour.value) {
+      case '9':
+        timeOfDay.textContent = 'AM (EDT)';
+        break;
+      case '10':
+        timeOfDay.textContent = 'AM (EDT)';
+        break;
+      case '11':
+        timeOfDay.textContent = 'AM (EDT)';
+        break;
+      case '':
+        timeOfDay.textContent = '';
+        break;
+      default:
+        timeOfDay.textContent = 'PM (EDT)';
+    }
+  });
+}
 
 // Request consultation checkbox
 const requestBtn = document.querySelector('#consult_request');
-requestBtn.addEventListener('change', e => {
-  if (requestBtn.checked) {
-    consultSchedule.style.animation = 'slideDown 200ms ease-out 1';
-    setTimeout(() => {
-      consultSchedule.style.display = 'block';
-      consultSchedule.style.transform = 'translateY(0rem)';
-    }, 200);
-  } else {
-    consultSchedule.style.animation = 'slideUp 200ms ease-out 1';
-    setTimeout(() => {
-      consultSchedule.style.transform = 'translateY(-2rem)';
-      consultSchedule.style.display = 'none';
-    }, 200);
-  }
-});
+if (requestBtn) {
+  requestBtn.addEventListener('change', e => {
+    if (requestBtn.checked) {
+      consultSchedule.style.animation = 'slideDown 200ms ease-out 1';
+      setTimeout(() => {
+        consultSchedule.style.display = 'block';
+        consultSchedule.style.transform = 'translateY(0rem)';
+      }, 200);
+    } else {
+      consultSchedule.style.animation = 'slideUp 200ms ease-out 1';
+      setTimeout(() => {
+        consultSchedule.style.transform = 'translateY(-2rem)';
+        consultSchedule.style.display = 'none';
+      }, 200);
+    }
+  });
+}
 
 // Minimum schedule date
 const currentDate = new Date().toLocaleDateString('fr-ca');
 const dateSelect = document.querySelector('#consult_date');
-dateSelect.value = currentDate;
-dateSelect.min = currentDate;
+if (dateSelect) {
+  dateSelect.value = currentDate;
+  dateSelect.min = currentDate;
+}
 
 // Flickering Lightbulb
 
