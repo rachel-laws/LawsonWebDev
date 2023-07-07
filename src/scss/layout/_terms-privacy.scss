@@ -2,7 +2,8 @@
 
 //TODO: Move text styles to typography
 
-.terms {
+.terms,
+.privacy {
   @include flexCenterColumn;
   margin-top: 6rem;
   line-height: 1.6;
