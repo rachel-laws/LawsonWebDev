@@ -2,6 +2,7 @@
 
 header {
   max-width: 100vw;
+  background-repeat: no-repeat;
 
   .header__bottom {
     @include flexCenter;

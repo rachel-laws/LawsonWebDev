@@ -3,6 +3,11 @@
 .services {
   @include flexCenterColumn;
   gap: 3rem;
+
+  h1,
+  h2 {
+    margin-bottom: 4rem;
+  }
 }
 
 // Main Services Section
