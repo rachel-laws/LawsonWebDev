@@ -5,6 +5,7 @@ footer {
   justify-content: space-between;
   align-items: flex-end;
   padding: 1rem 2rem 1rem;
+  //TODO: Fix to bottom
 
   background: $dark-bg;
   border-top: 4px solid $gold;
@@ -18,7 +19,6 @@ footer {
   }
 
   // Footer Logo
-
   img {
     width: 13.2rem;
     margin-left: -0.6rem;
@@ -31,20 +31,17 @@ footer {
 }
 
 // Columns
-
 .footer__left,
 .footer__right {
   @include flexColumn;
 }
 
 // Left
-
 .footer__left {
   gap: 0.75rem;
 }
 
 // Terms of Service | Privacy Policy
-
 .footer__links {
   display: flex;
   gap: 1rem;
@@ -81,7 +78,6 @@ footer {
 }
 
 // Right
-
 .footer__right {
   gap: 1rem;
   text-align: right;
@@ -93,21 +89,23 @@ footer {
   }
 }
 
-// Got a project in mind?
-
-.footer__question {
+// Have a project in mind?
+.cta__question {
   display: flex;
   align-items: flex-end;
   justify-content: flex-end;
   gap: 0.2rem;
+}
 
+// Lightbulb
+.cta__question-footer {
   @include mqSmall {
     justify-content: flex-start;
   }
-  // Lightbulb
+
   img {
     width: 2rem;
-    animation: flicker 5s infinite linear;
     transform: translateY(2px);
+    animation: flicker 5s infinite linear;
   }
 }

@@ -120,3 +120,41 @@ const currentDate = new Date().toLocaleDateString('fr-ca');
 const dateSelect = document.querySelector('#consult_date');
 dateSelect.value = currentDate;
 dateSelect.min = currentDate;
+
+// Flickering Lightbulb
+
+const lightbulb = document.querySelector('#ctaLightbulb');
+let interval = 0;
+
+const flickerLightbulb = () => {
+  const imageSources = [
+    '/assets/svg/lightbulb-on.svg',
+    '/assets/svg/lightbulb-off.svg',
+  ];
+
+  let isOn = true;
+
+  const flickerInterval = setInterval(() => {
+    if (isOn) {
+      lightbulb.src = imageSources[0];
+      isOn = false;
+      setTimeout(() => {
+        isOn = true;
+        lightbulb.src = imageSources[1];
+        lightbulb.style.animation = 'turnOff 500ms ease';
+        setTimeout(() => {
+          lightbulb.style.animation = '';
+        }, 500);
+      }, 5000); // Time on
+    } else {
+      lightbulb.src = imageSources[1];
+      isOn = true;
+    }
+  }, 5500); // Time off
+
+  return flickerInterval;
+};
+
+if (lightbulb) {
+  interval = flickerLightbulb();
+}

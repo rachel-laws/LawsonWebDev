@@ -9,6 +9,20 @@
   }
 }
 
+//TODO: Fix
+.required-input {
+  position: relative;
+
+  &::after {
+    position: absolute;
+    content: '*';
+    top: 0;
+    left: -0.45rem;
+    font-size: 1.2rem;
+    color: #4d4d4d;
+  }
+}
+
 .nav-visible {
   display: flex;
   animation: slideIn 200ms ease 1;

@@ -31,7 +31,7 @@ footer {
   font-size: 0.8rem;
 }
 
-.footer__question {
+.cta__question-footer {
   p {
     color: $gold;
     font-size: 1.4rem;
@@ -72,12 +72,10 @@ h2 {
 
   h1 {
     font-size: 1.5rem;
-    margin-bottom: 4rem;
   }
 
   h2 {
     font-size: 1.7rem;
-    margin-bottom: 4rem;
   }
 
   h1,
@@ -103,8 +101,8 @@ h2 {
   font-family: 'Josefin Sans', sans-serif;
   font-size: 3.3rem;
   font-weight: 700;
-  background: linear-gradient(#f5d28c, #8f6f30);
-  text-shadow: 2px 2px #c8963448;
+  background: linear-gradient(#eec36e, #a1844a);
+  text-shadow: 2px 2px #daa94548;
   color: transparent;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -181,4 +179,18 @@ h2 {
   font-family: 'Roboto Slab', serif;
   text-transform: uppercase;
   color: $white-txt;
+}
+
+// Contact
+
+.cta__question-contact {
+  p {
+    color: $gold;
+    font-weight: 600;
+    font-size: 2.6rem;
+
+    @include mqSmall {
+      font-size: clamp(1rem, 7vw, 2rem);
+    }
+  }
 }
