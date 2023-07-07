@@ -28,7 +28,7 @@
 
   @include mqSmall {
     grid-template-columns: 1fr;
-    gap: 0.5rem;
+    gap: 1rem;
   }
 }
 
@@ -116,6 +116,10 @@
   margin-top: 0rem;
   margin-bottom: 6rem;
 
+  @include mqSmall {
+    overflow: hidden;
+  }
+
   h2 {
     margin-bottom: 3.5rem;
   }
@@ -129,10 +133,14 @@
   height: 1.5rem;
   z-index: 3;
 
-  background-color: $gold;
+  background: $gold;
   border: 4px solid $light-bg;
   border-radius: 50%;
   outline: $standard-border;
+
+  @include mqSmall {
+    display: none;
+  }
 }
 
 .process__timeline {
@@ -146,12 +154,12 @@
 
   &::after {
     @include pseudoElement;
-    width: 0.25rem;
     left: -1rem;
-    height: calc(100% - 11rem);
     z-index: -1;
-    border-radius: 2px;
+    width: 0.25rem;
+    height: calc(100% - 11rem);
     background: $gold;
+    border-radius: 2px;
     border-left: 2px solid #baa172;
   }
 }
@@ -172,10 +180,11 @@
 
   transform: translateX(50%) scale(0.8);
   opacity: 0;
-  transition: all 0.5s;
+  transition: all 500ms;
 
   @include mqSmall {
     align-items: flex-start;
+    margin-left: 0rem;
   }
 
   &:last-of-type {
