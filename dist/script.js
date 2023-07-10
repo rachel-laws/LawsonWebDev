@@ -62,6 +62,7 @@ document.addEventListener('DOMContentLoaded', function () {
   const rewrittenTermsURL = 'https://lawsonwebdevelopment.com/terms-of-service';
   const rewrittenPrivacyURL = 'https://lawsonwebdevelopment.com/privacy-policy';
 
+
   const currentURL = window.location.href;
 
   document.querySelectorAll('nav a').forEach(link => {
