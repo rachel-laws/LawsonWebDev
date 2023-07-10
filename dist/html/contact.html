@@ -45,6 +45,9 @@
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
+    <header class="services__header">
+      <div class="header__img"></div>
+    </header>
     <main class="contact">
       <section class="contact__form">
         <h1>Contact</h1>
@@ -70,6 +73,9 @@
                   id="contact_firstName"
                   name="firstName"
                   type="text"
+                  placeholder="Your first name"
+                  title="Maximum 30 characters"
+                  maxlength="30"
                   required />
               </label>
               <label for="contact_lastName" class="required-input">
@@ -78,21 +84,31 @@
                   id="contact_lastName"
                   name="lastName"
                   type="text"
+                  placeholder="Your last name"
+                  title="Maximum 30 characters"
+                  maxlength="30"
                   required />
               </label>
             </div>
             <label for="contact_email" class="required-input">
               Email Address
-              <input id="contact_email" name="email" type="email" required />
+              <input
+                id="contact_email"
+                name="email"
+                type="email"
+                placeholder="example@gmail.com"
+                title="Must be a valid email address"
+                pattern="[a-z0-9._+-]+@[a-z0-9.-]+\.[a-z]{2,}"
+                required />
             </label>
             <label for="contact_message">
               Your Message
               <textarea
                 id="contact_message"
                 name="message"
-                cols="30"
-                rows="10"
-                required></textarea>
+                placeholder="Write your message here"
+                maxlength="350"
+                title="Maximum 350 characters"></textarea>
             </label>
             <div class="request__checkbox">
               <label for="consult_request">Request a Free Consultation</label>
@@ -132,7 +148,7 @@
                     <option value="6">6</option>
                     <option value="7">7</option>
                   </select>
-                  <span>:</span>
+                  <p>:</p>
                   <select
                     id="timePickerMin"
                     name="minute"
@@ -148,12 +164,13 @@
               </div>
             </div>
             <label for="consult_description">
-              Brief Project Description
+              Project Description
               <textarea
                 id="consult_description"
                 name="description"
-                cols="30"
-                rows="10"></textarea>
+                placeholder="Briefly describe your project"
+                maxlength="350"
+                title="Maximum 350 characters"></textarea>
             </label>
           </fieldset>
           <input
@@ -161,7 +178,17 @@
             id="submitForm"
             class="contact__submit"
             value="Send" />
+          <div class="form__corner"></div>
         </form>
+        <div class="contact__methods">
+          <p>
+            <i class="fa-solid fa-envelope"></i> info@lawsonwebdevelopment.com
+          </p>
+          <a href="www.linkedin.com/in/rachel-lawson-a50112261" target="_blank">
+            <i class="fa-brands fa-linkedin"></i>
+            LinkedIn
+          </a>
+        </div>
       </section>
     </main>
     <footer>
@@ -175,7 +202,7 @@
         </div>
       </div>
       <p class="footer__email">
-        <i class="bi bi-envelope"></i> info@lawsonwebdevelopment.com
+        <i class="fa-regular fa-envelope"></i> info@lawsonwebdevelopment.com
       </p>
       <div class="footer__right">
         <div class="cta__question cta__question-footer">

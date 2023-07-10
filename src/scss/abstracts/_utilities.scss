@@ -1,15 +1,16 @@
 @use '../abstracts/mixins' as *;
+@use '../abstracts/colors' as *;
 
 // Utility Classes
 
 .block {
   display: block;
+
   @include mqMedium {
     display: inline;
   }
 }
 
-//TODO: Fix
 .required-input {
   position: relative;
 
@@ -19,7 +20,7 @@
     top: 0;
     left: -0.45rem;
     font-size: 1.2rem;
-    color: #4d4d4d;
+    color: $gold;
   }
 }
 
@@ -40,14 +41,15 @@
   margin-bottom: 2rem;
 
   @include mqMedium {
-    padding-inline: 3vw;
+    padding-inline: 10vw;
+    flex-direction: column;
+    text-align: center;
+    gap: 1.5rem;
   }
 
   @include mqSmall {
-    flex-direction: column;
-    text-align: center;
-    gap: 1rem;
     padding-inline: 0;
+    gap: 1rem;
   }
 }
 

@@ -3,8 +3,8 @@
 
 // Main Margins
 
-$home__section__margin-block: 6rem 5rem;
-$home__section__margin-block-mobile: 2rem;
+$home__section__margin-block: 5rem 5rem;
+$home__section__margin-block-mobile: 2rem 2.5rem;
 
 $section__margin-block: 4rem;
 $section__margin-block-mobile: 4rem;
@@ -14,19 +14,21 @@ $section__margin-inline-mobile: 1rem;
 
 // Borders
 
-$card-border: 1px solid #d2d2d2bd;
-$card-outline: 1px solid #ccb58779;
 $standard-border: 2px solid $gold;
-$btn-border: 3px solid $gold;
 $thin-border: 1px solid $gold;
+$btn-border: 3px solid $gold;
+
+$card-border: 1px solid #d2d2d2bd;
+$card-outline: 1px solid $outline;
 
 // Shadows
 
-$card-shadow: 0px 0px 10px 1px rgba(0 0 0 / 0.1);
-$small-shadow: 2px 2px 5px rgb(0 0 0 / 0.2);
-$section-shadow: 0px 0px 15px rgb(0 0 0 / 0.15);
-$btn-shadow: -3px 3px 6px black;
 $nav-shadow: 0px 0px 15px rgb(0 0 0 / 0.3);
+$section-shadow: 0px 0px 15px rgb(0 0 0 / 0.15);
+$card-shadow: 0px 0px 10px 1px rgba(0 0 0 / 0.1);
+$btn-shadow: -3px 3px 6px #000;
+$small-shadow: 2px 2px 5px rgb(0 0 0 / 0.2);
+$table-shadow: 0px 0px 5px rgba(0 0 0 / 0.06);
 
 // Typography
 

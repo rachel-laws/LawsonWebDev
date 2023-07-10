@@ -51,10 +51,6 @@ h2 {
 .home h2 {
   font-size: 2.8rem;
 
-  @include mqMedium {
-    font-size: 2.4rem;
-  }
-
   @include mqSmall {
     font-size: 2rem;
   }
@@ -101,14 +97,14 @@ h2 {
   font-family: 'Josefin Sans', sans-serif;
   font-size: 3.3rem;
   font-weight: 700;
-  background: linear-gradient(#eec36e, #a1844a);
+  background: linear-gradient(#eac884 30%, #826938);
   text-shadow: 2px 2px #daa94548;
   color: transparent;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   -webkit-background-clip: text;
 
-  @include mqMedium {
+  @include mqSmall {
     font-size: 2.4rem;
   }
 }
@@ -119,6 +115,10 @@ h2 {
 
   @include mqMedium {
     font-size: 1.2rem;
+  }
+
+  @include mqXSmall {
+    font-size: 1rem;
   }
 }
 
@@ -183,6 +183,18 @@ h2 {
 
 // Contact
 
+legend {
+  color: $white-txt;
+  font-size: 1.8rem;
+  font-family: 'Roboto Slab', sans-serif;
+  text-indent: 3.25rem;
+
+  @include mqSmall {
+    font-size: 1.4rem;
+    text-indent: 0rem;
+  }
+}
+
 .cta__question-contact {
   p {
     color: $gold;
@@ -192,5 +204,21 @@ h2 {
     @include mqSmall {
       font-size: clamp(1rem, 7vw, 2rem);
     }
+  }
+}
+
+// Pricing
+
+.pricing {
+  a {
+    color: #3257a8;
+  }
+
+  p {
+    line-height: 1.7;
+  }
+
+  th {
+    font-size: 1.15rem;
   }
 }

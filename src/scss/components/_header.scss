@@ -2,14 +2,24 @@
 
 header {
   max-width: 100vw;
-  background-repeat: no-repeat;
+  overflow: hidden;
+  box-shadow: 0px 0px 15px rgb(0 0 0 / 0.3);
+
+  .header__img {
+    margin-top: 2rem;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    @include mqSmall {
+      margin-top: 3rem;
+    }
+  }
 
   .header__bottom {
     @include flexCenter;
     padding-block: 1rem;
     background: $dark-bg;
     border-block: $thin-border;
-    box-shadow: 0px 1px 8px rgb(0 0 0 / 0.35);
 
     ul {
       @include flexCenter;
@@ -17,7 +27,7 @@ header {
 
       @include mqSmall {
         flex-direction: column;
-        gap: 0.5rem;
+        gap: 0.75rem;
       }
     }
   }
@@ -32,32 +42,31 @@ header {
 
 .home__header {
   .header__img {
-    @include flexCenter;
-    overflow: hidden;
-    height: 55vh;
+    height: 70vh;
     background-image: url('/assets/img/header_home.jpg');
-    background-size: cover;
-    background-position: 20% -50%;
+
+    @include mqMedium {
+      background-position: 50%;
+    }
 
     @include mqSmall {
       height: 30vh;
-      margin-top: 3rem;
       background-position: 70%;
-      background-attachment: scroll;
     }
   }
 }
 
 .services__header {
-  height: 40vh;
-  background-image: url('/assets/img/services/header_services.png');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  margin-top: 3.1rem;
-  box-shadow: 0px 1px 8px rgb(0 0 0 / 0.35);
+  border-bottom: $thin-border;
 
-  @include mqSmall {
+  .header__img {
     height: 25vh;
+    background-image: url('/assets/img/header_img.jpg');
+    background-position: center;
+    margin-top: 3.1rem;
+
+    @include mqSmall {
+      height: 25vh;
+    }
   }
 }

@@ -1,14 +1,32 @@
 @use '../abstracts' as *;
 
-// Nav Button
+// General
+.btn,
+button,
+input[type='submit'] {
+  font-family: 'Roboto Slab', serif;
+  color: $white-txt;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  text-align: center;
 
+  border: $btn-border;
+  cursor: pointer;
+  transition: 200ms ease;
+}
+
+.btn {
+  box-shadow: $btn-shadow;
+}
+
+// Nav Button
 .nav__toggle {
   display: none;
   font-size: 1.7rem;
   z-index: 999;
   height: 2.2rem;
   width: 2.2rem;
-  margin-bottom: 2px;
+  margin-bottom: 7px;
   background: transparent;
   color: $white-txt;
   border: none;
@@ -27,39 +45,35 @@
   @include mqSmall {
     display: block;
   }
-
-  .bi-x-square {
-    font-size: 1.4rem;
-  }
 }
 
-// General Buttons
-
-.btn {
-  text-align: center;
-  color: $white-txt;
-  font-weight: 500;
-  letter-spacing: 0.5px;
-
-  border: $btn-border;
+// Home Call-to-Action
+.cta__links .btn {
+  width: 15.5rem;
+  padding: 0.9rem 1.75rem;
+  font-size: 1.2rem;
   background: $dark-bg;
-  box-shadow: $btn-shadow;
-  transition: 200ms ease;
+
+  &:hover {
+    border-color: $white-txt;
+  }
 
   &:active {
-    transform: translateX(-3px);
+    transform: translateX(-4px);
   }
 }
 
+// Contact Submit
 .contact__submit {
   width: max-content;
   margin-right: auto;
-  padding: 0.6rem 2rem;
+  padding: 0.6rem 2.5rem;
 
   color: $white-txt;
   font-size: 1.3rem;
   font-weight: 500;
-  letter-spacing: 0.5px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
 
   background: $gray-bg;
   border: $btn-border;
@@ -76,25 +90,17 @@
   }
 }
 
-// Home CTA
-
-.cta__links .btn {
-  width: 15rem;
-  height: 3.2rem;
-  padding: 0.75rem 1.5rem;
-  font-size: 1.2rem;
-
-  &:hover {
-    border-color: $white-txt;
-  }
-}
-
 // Footer Consultation
-
 .footer__btn {
   margin-bottom: 0.5rem;
   padding: 1rem 1.5rem;
   font-size: 1.2rem;
+
+  @include mqSmall {
+    margin-bottom: 1.1rem;
+    padding: 1rem 1rem;
+    font-size: 1.1rem;
+  }
 
   &:hover {
     color: $black-txt;
@@ -102,9 +108,8 @@
     border-color: $dark-bg;
   }
 
-  @include mqSmall {
-    margin-bottom: 1.1rem;
-    padding: 1rem 1rem;
-    font-size: 1.1rem;
+  &:active {
+    transform: translateX(4px);
+    background: $light-gold;
   }
 }

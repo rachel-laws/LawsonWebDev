@@ -3,10 +3,19 @@
 .services {
   @include flexCenterColumn;
   gap: 3rem;
+  margin-top: -1rem;
+
+  @include mqSmall {
+    gap: 2rem;
+  }
 
   h1,
   h2 {
     margin-bottom: 4rem;
+
+    @include mqSmall {
+      margin-bottom: 3rem;
+    }
   }
 }
 

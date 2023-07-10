@@ -2,9 +2,11 @@
 
 .intro {
   .intro__heading {
+    margin-top: -1rem;
     margin-bottom: 4rem;
 
     @include mqSmall {
+      margin-top: 3rem;
       margin-bottom: 3rem;
     }
 
@@ -19,45 +21,46 @@
   }
 
   .intro__services {
-    @include threeColumnGrid;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 1fr;
+    align-items: stretch;
     gap: 4vw;
-    padding-inline: 3rem;
+    padding-inline: 1rem;
 
     @include mqMedium {
       grid-template-columns: 1fr;
       gap: 3rem;
       padding-inline: 1rem;
     }
-
-    img {
-      margin-inline: auto;
-      width: 7rem;
-      z-index: 1;
-    }
   }
 
   .intro__service {
     position: relative;
-    overflow: hidden;
     @include flexColumn;
     justify-content: flex-start;
     gap: 1rem;
-
-    height: 24rem;
-    min-width: 16rem;
-    max-width: 25rem;
-    margin: auto;
+    overflow: hidden;
+    margin-inline: auto;
     padding: 1.5rem 2rem 1.75rem;
 
-    background: $card-bg;
     line-height: $card-lh;
-    border: $card-border;
+    background: $card-bg;
+    outline: 1px solid transparent;
+    outline-offset: -11px;
     border-radius: $card-br;
     box-shadow: $card-shadow;
     transition: $ease-in;
 
     @include mqMedium {
       height: auto;
+    }
+
+    img {
+      margin-inline: auto;
+      width: 7rem;
+      z-index: 1;
+      transition: $ease-in;
     }
 
     &::after {
@@ -67,33 +70,43 @@
       width: 4rem;
       height: 4rem;
 
-      background: $card-accent;
+      background: $card-tab;
       border-radius: 50%;
       transition: $ease-in;
     }
 
     &::before {
       @include pseudoElement;
-      top: -3.1rem;
-      left: -3rem;
-      right: -3rem;
+      top: -3.4rem;
+      left: -4rem;
+      right: -4rem;
       height: 0%;
-      border-radius: 50%;
+
       background: $card-accent;
+      border-radius: 50%;
+      box-shadow: $card-shadow;
       transition: $ease-in;
     }
 
-    &:hover::before {
+    &:hover::before,
+    &:focus-visible::before {
       height: 12rem;
     }
 
-    &:hover::after {
+    &:hover::after,
+    &:focus-visible::after {
       height: 0rem;
     }
 
-    &:hover {
-      background: $gray-bg;
+    &:hover,
+    &:focus-visible {
       color: $white-txt;
+      background: $gray-bg;
+      outline-color: $outline;
+
+      img {
+        transform: scale(1.1) translateY(-0.65rem);
+      }
     }
   }
 }
@@ -103,6 +116,7 @@
   gap: 7vw;
   width: 100%;
   padding-block: 4rem;
+
   background: $dark-bg;
   border-block: $standard-border;
   box-shadow: $section-shadow;
@@ -133,6 +147,7 @@
     display: grid;
     justify-content: space-between;
     grid-template-columns: 30% 60%;
+
     margin-top: 3rem;
     margin-left: 3rem;
 
@@ -141,6 +156,10 @@
       gap: 3.5rem;
       margin-top: 0.5rem;
       margin-left: 2rem;
+    }
+
+    @include mqXSmall {
+      margin-left: 1rem;
     }
 
     img {
@@ -153,6 +172,10 @@
         width: 120%;
         height: 120%;
         margin-left: -2rem;
+      }
+
+      @include mqXSmall {
+        width: 95%;
       }
     }
 
@@ -167,9 +190,9 @@
 
       &::after {
         @include pseudoElement;
-        top: 0;
+        top: 6px;
         left: -1.5rem;
-        height: 100%;
+        height: 98%;
         width: 0.25rem;
         background: #0000001c;
         border-radius: 1px;
@@ -181,6 +204,7 @@
 .home__quote {
   padding-block: 4rem;
   padding-inline: 23vw;
+
   background: $dark-bg;
   border-block: $standard-border;
   box-shadow: $section-shadow;

@@ -40,7 +40,7 @@ navLink.forEach(link => {
 
 const hideNavbar = navLinks => {
   toggleMobileNav.setAttribute('aria-expanded', 'false');
-  toggleMobileNavIcon.classList.replace('bi-x-square', 'bi-list');
+  toggleMobileNavIcon.classList.replace('bi-x', 'bi-list');
   navLinks.classList.add('nav-hidden');
   setTimeout(() => {
     navLinks.classList.remove('nav-visible');
@@ -50,7 +50,7 @@ const hideNavbar = navLinks => {
 
 const showNavbar = navLinks => {
   toggleMobileNav.setAttribute('aria-expanded', 'true');
-  toggleMobileNavIcon.classList.replace('bi-list', 'bi-x-square');
+  toggleMobileNavIcon.classList.replace('bi-list', 'bi-x');
   navLinks.classList.add('nav-visible');
 };
 

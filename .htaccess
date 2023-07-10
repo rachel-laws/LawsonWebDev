@@ -1,0 +1,17 @@
+DirectoryIndex ./dist/html/index.html
+
+RewriteEngine On
+
+# Exclude the JavaScript files from rewriting
+RewriteRule ^js/(.*)$ - [L]
+
+RewriteRule ^services$ /dist/html/services.html
+RewriteRule ^pricing$ /dist/html/pricing.html
+RewriteRule ^contact$ /dist/html/contact.html
+RewriteRule ^terms-of-service$ /dist/html/terms.html
+RewriteRule ^privacy-policy$ /dist/html/privacy.html
+RewriteRule ^thank-you$ /dist/html/thankyou.html
+
+
+
+

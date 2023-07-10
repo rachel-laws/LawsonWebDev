@@ -5,13 +5,18 @@ $dark-bg: #121212;
 $gray-bg: #242424;
 $card-bg: linear-gradient(33deg, #f2f2f2, #fff);
 $quote-bg: linear-gradient(33deg, #c4c4c4, #f1f1f1, #eaeaea);
+$input-bg: #fcfcfc;
 
 // Text
 
 $white-txt: #fefefe;
 $black-txt: #0a0a0a;
 $logo-txt: #ffdead;
+$placeholder-txt: #808080;
 
 // Accents
 $gold: #ccb587;
-$card-accent: linear-gradient(33deg, #a18141, #e8cb8f);
+$light-gold: #efd6a4;
+$card-accent: linear-gradient(33deg, #74561e, #fbd384, #856323);
+$card-tab: linear-gradient(33deg, #997025, #ffe5b0);
+$outline: #ccb58779;

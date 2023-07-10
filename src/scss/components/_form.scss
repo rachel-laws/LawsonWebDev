@@ -1,1 +1,307 @@
 @use '../abstracts' as *;
+
+// Contact Form Elements
+
+form {
+  position: relative;
+  width: 40vw;
+  padding: 1rem 4rem 3rem;
+  margin-left: 3rem;
+
+  background: $card-bg;
+  border-radius: 0 3px 0 0;
+  box-shadow: $card-shadow;
+
+  @include mqMedium {
+    width: 80vw;
+  }
+
+  @include mqSmall {
+    width: 90vw;
+    padding: 1rem 2rem 2rem;
+    margin-left: 0rem;
+  }
+
+  @include mqXSmall {
+    width: 95vw;
+  }
+
+  &::after {
+    @include pseudoElement;
+    inset: 0 auto 0 -3rem;
+    z-index: 1;
+    width: 3rem;
+    background-color: $gray-bg;
+    border-bottom: 3px solid $gold;
+
+    border-radius: 3px 0px 0px;
+    box-shadow: $card-shadow;
+
+    @include mqSmall {
+      display: none;
+    }
+  }
+}
+
+fieldset {
+  @include flexColumn;
+  justify-content: flex-start;
+  gap: 2rem;
+
+  margin-bottom: 2rem;
+  padding-block: 1rem;
+  border: none;
+
+  @include mqSmall {
+    gap: 1.5rem;
+    padding-block: 0rem;
+  }
+}
+
+legend {
+  position: relative;
+  width: 100%;
+  z-index: 1;
+  margin-bottom: 1rem;
+  padding-block: 0rem 2rem;
+
+  &::before {
+    @include pseudoElement;
+    inset: -1rem -4rem auto -4.1rem;
+    z-index: -1;
+    height: 100%;
+    background: $gray-bg;
+    border-bottom: $btn-border;
+    border-radius: 0 3px 0 0;
+
+    @include mqSmall {
+      inset: -1rem -2rem auto;
+      border-radius: 3px 3px 0 0;
+    }
+  }
+
+  i {
+    position: absolute;
+    top: -0.7rem;
+    left: -6.5rem;
+    font-size: 2.4rem;
+
+    @include mqSmall {
+      display: none;
+    }
+  }
+}
+
+label {
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+// Inputs
+
+input,
+textarea,
+select {
+  display: block;
+  margin-top: 1rem;
+  outline-color: $gold;
+
+  font-size: 1rem;
+  font-weight: 500;
+  font-family: inherit;
+
+  &::placeholder {
+    font-size: 0.9rem;
+    color: $placeholder-txt;
+  }
+}
+
+input,
+textarea {
+  width: 100%;
+  background: $input-bg;
+  border: 1px solid #cccccc;
+  border-radius: $card-br;
+  box-shadow: 0px 0px 6px rgb(0 0 0 / 0.07);
+}
+
+textarea {
+  padding: 0.75rem 1rem;
+  resize: none;
+  height: 9rem;
+}
+
+input[type='text'],
+input[type='email'] {
+  width: 100%;
+  padding: 0.6rem 0.9rem;
+}
+
+.contact__name {
+  display: flex;
+  justify-content: space-between;
+  gap: 1.5rem;
+
+  label {
+    width: 100%;
+  }
+
+  @include mqXSmall {
+    flex-direction: column;
+  }
+}
+
+// Request consultation
+
+.request__checkbox {
+  display: flex;
+  align-items: flex-end;
+  gap: 0.75rem;
+  margin-bottom: 0.5rem;
+
+  label {
+    order: 2;
+  }
+
+  @include mqSmall {
+    margin-bottom: 1rem;
+  }
+}
+
+input[type='checkbox'] {
+  appearance: none;
+  width: 1.25rem;
+  height: 1.25rem;
+  display: inline-block;
+  cursor: pointer;
+
+  background: transparent;
+  border: 3px solid $gray-bg;
+  outline: 3px solid $light-bg;
+  outline-offset: -5px;
+
+  &:checked {
+    background: $card-tab;
+  }
+}
+
+// Schedule Consultation
+
+.consult__schedule {
+  display: none;
+  margin-top: 2.75rem;
+
+  @include mqSmall {
+    margin-top: 2rem;
+  }
+}
+
+.date-time-picker {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  margin-right: 4rem;
+  padding-left: 3px;
+  font-weight: 500;
+
+  @include mqSmall {
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 0rem;
+    margin: 0;
+  }
+}
+
+// Date Selector
+input[type='date'] {
+  position: relative;
+  padding: 0.2rem 0.8rem;
+  margin-bottom: 2rem;
+
+  font-family: Tahoma, sans-serif;
+  font-size: 1.1rem;
+  text-align: center;
+
+  &::-webkit-calendar-picker-indicator {
+    position: absolute;
+    background: transparent;
+    inset: 0;
+    width: auto;
+    height: auto;
+    color: transparent;
+    text-align: center;
+    cursor: pointer;
+  }
+}
+
+// Time Selector
+.time-picker {
+  position: relative;
+  margin-top: 1.5px;
+}
+
+.time-picker__selects {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+
+  @include mqSmall {
+    margin-bottom: 2rem;
+  }
+
+  &::before {
+    @include pseudoElement;
+    inset: 1rem 1.4rem 0 0;
+    z-index: -1;
+    background: $input-bg;
+    border-radius: $card-br;
+    outline: $card-border;
+  }
+
+  // Time Selects
+  select {
+    width: 3rem;
+    padding: 0.2rem 0.25rem;
+    border: none;
+    cursor: pointer;
+
+    font-family: Tahoma, sans-serif;
+    font-size: 1.1rem;
+    background: transparent;
+    text-align: center;
+  }
+
+  // :
+  p:first-of-type {
+    margin-bottom: 5px;
+    margin-left: 3px;
+    font-size: 1.2rem;
+  }
+
+  // AM \ PM
+  p:last-of-type {
+    position: absolute;
+    right: -2.9rem;
+    margin-bottom: 6px;
+    font-size: 0.9rem;
+  }
+}
+
+// Corner decor
+.form__corner {
+  position: absolute;
+  background: url('/assets/svg/form-corner.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: 2;
+  bottom: -1px;
+  right: 0;
+  width: 13rem;
+  height: 9rem;
+  border-bottom: 1px solid $gray-bg;
+
+  @include mqXSmall {
+    display: none !important;
+  }
+}
