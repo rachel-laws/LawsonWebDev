@@ -48,11 +48,11 @@ const showNavbar = navLinks => {
 
 // Highlight Active Page
 
-navLink.forEach(link => {
-  if (link.href === window.location.href) {
-    link.setAttribute('aria-current', 'page');
-  }
-});
+// navLink.forEach(link => {
+//   if (link.href === window.location.href) {
+//     link.setAttribute('aria-current', 'page');
+//   }
+// });
 
 document.addEventListener('DOMContentLoaded', function () {
   const rewrittenHomeURL = 'https://lawsonwebdevelopment.com/';
