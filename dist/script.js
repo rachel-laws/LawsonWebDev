@@ -62,6 +62,8 @@ document.addEventListener('DOMContentLoaded', function () {
   const rewrittenTermsURL = 'https://lawsonwebdevelopment.com/terms-of-service';
   const rewrittenPrivacyURL = 'https://lawsonwebdevelopment.com/privacy-policy';
 
+  const currentURL = window.location.href;
+
   document.querySelectorAll('nav a').forEach(link => {
     const href = link.getAttribute('href');
 
@@ -73,7 +75,11 @@ document.addEventListener('DOMContentLoaded', function () {
       href === rewrittenTermsURL ||
       href === rewrittenPrivacyURL
     ) {
-      link.setAttribute('aria-current', 'page');
+      if (href === currentURL) {
+        link.setAttribute('aria-current', 'page');
+      } else {
+        link.removeAttribute('aria-current');
+      }
     }
   });
 });
