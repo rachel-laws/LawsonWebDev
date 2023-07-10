@@ -1,12 +1,11 @@
 //* Mobile Navigation
 
 const nav = document.querySelector('nav');
+const navLink = document.querySelectorAll('nav a');
 const navLinks = document.querySelector('nav ul');
 
 const toggleMobileNav = document.querySelector('#toggleMobileNav');
 const toggleMobileNavIcon = document.querySelector('#toggleMobileNav i');
-
-const navLink = document.querySelectorAll('nav a');
 
 // Show / Hide Navbar
 
@@ -48,38 +47,36 @@ const showNavbar = navLinks => {
 
 // Highlight Active Page
 
-// navLink.forEach(link => {
-//   if (link.href === window.location.href) {
-//     link.setAttribute('aria-current', 'page');
-//   }
-// });
+navLink.forEach(link => {
+  if (link.href === window.location.href) {
+    link.setAttribute('aria-current', 'page');
+  }
+});
 
-document.addEventListener('DOMContentLoaded', function () {
-  const rewrittenHomeURL = 'https://lawsonwebdevelopment.com/';
-  const rewrittenServicesURL = 'https://lawsonwebdevelopment.com/services';
-  const rewrittenPricingURL = 'https://lawsonwebdevelopment.com/pricing';
-  const rewrittenContactURL = 'https://lawsonwebdevelopment.com/contact';
-  const rewrittenTermsURL = 'https://lawsonwebdevelopment.com/terms-of-service';
-  const rewrittenPrivacyURL = 'https://lawsonwebdevelopment.com/privacy-policy';
+document.addEventListener('DOMContentLoaded', e => {
+  const homeURL = 'https://lawsonwebdevelopment.com/';
+  const servicesURL = 'https://lawsonwebdevelopment.com/services';
+  const pricingURL = 'https://lawsonwebdevelopment.com/pricing';
+  const contactURL = 'https://lawsonwebdevelopment.com/contact';
+  const termsURL = 'https://lawsonwebdevelopment.com/terms-of-service';
+  const privacyURL = 'https://lawsonwebdevelopment.com/privacy-policy';
 
   const currentURL = window.location.href;
 
-  document.querySelectorAll('nav a').forEach(link => {
+  navLink.forEach(link => {
     const href = link.getAttribute('href');
 
     if (
-      href === rewrittenHomeURL ||
-      href === rewrittenServicesURL ||
-      href === rewrittenPricingURL ||
-      href === rewrittenContactURL ||
-      href === rewrittenTermsURL ||
-      href === rewrittenPrivacyURL
+      href === homeURL ||
+      href === servicesURL ||
+      href === pricingURL ||
+      href === contactURL ||
+      href === termsURL ||
+      href === privacyURL
     ) {
-      if (href === currentURL) {
-        link.setAttribute('aria-current', 'page');
-      } else {
-        link.removeAttribute('aria-current');
-      }
+      href === currentURL
+        ? link.setAttribute('aria-current', 'page')
+        : link.removeAttribute('aria-current');
     }
   });
 });
@@ -89,10 +86,10 @@ document.addEventListener('DOMContentLoaded', function () {
 const slideCards = document.querySelectorAll('.timeline__card');
 
 const checkCard = () => {
+  // Slide in around halfway down viewport
   const slideIn = (window.innerHeight / 2) * 1.22;
   slideCards.forEach(card => {
     const cardTop = card.getBoundingClientRect().top;
-
     if (cardTop < slideIn) {
       card.classList.add('active');
     } else {
@@ -108,6 +105,7 @@ window.addEventListener('scroll', checkCard);
 // AM / PM
 const timePickerHour = document.querySelector('#timePickerHour');
 const timeOfDay = document.querySelector('#timeOfDay');
+
 if (timePickerHour) {
   timePickerHour.addEventListener('change', e => {
     switch (timePickerHour.value) {
@@ -131,8 +129,10 @@ if (timePickerHour) {
 
 // Request consultation checkbox
 const requestBtn = document.querySelector('#consult_request');
+
 if (requestBtn) {
   requestBtn.addEventListener('change', e => {
+    // Show consultation options
     if (requestBtn.checked) {
       consultSchedule.style.animation = 'slideDown 200ms ease-out 1';
       setTimeout(() => {
@@ -140,6 +140,7 @@ if (requestBtn) {
         consultSchedule.style.transform = 'translateY(0rem)';
       }, 200);
     } else {
+      // Hide consultation options
       consultSchedule.style.animation = 'slideUp 200ms ease-out 1';
       setTimeout(() => {
         consultSchedule.style.transform = 'translateY(-2rem)';
@@ -150,8 +151,11 @@ if (requestBtn) {
 }
 
 // Minimum schedule date
-const currentDate = new Date().toLocaleDateString('fr-ca');
+
 const dateSelect = document.querySelector('#consult_date');
+// Get current date
+const currentDate = new Date().toLocaleDateString('fr-ca');
+// Set minimum date to current date
 if (dateSelect) {
   dateSelect.value = currentDate;
   dateSelect.min = currentDate;
@@ -176,13 +180,16 @@ const flickerLightbulb = () => {
       isOn = false;
       setTimeout(() => {
         isOn = true;
+        // Turn on
         lightbulb.src = imageSources[1];
+        // Glow animation
         lightbulb.style.animation = 'turnOff 500ms ease';
         setTimeout(() => {
           lightbulb.style.animation = '';
         }, 500);
       }, 5000); // Time on
     } else {
+      // Turn off
       lightbulb.src = imageSources[1];
       isOn = true;
     }
