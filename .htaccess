@@ -12,6 +12,3 @@ RewriteRule ^terms-of-service$ /dist/html/terms.html
 RewriteRule ^privacy-policy$ /dist/html/privacy.html
 RewriteRule ^thank-you$ /dist/html/thankyou.html
 
-
-
-
