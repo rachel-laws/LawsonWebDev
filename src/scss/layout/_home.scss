@@ -230,6 +230,10 @@
       top: -5rem;
       left: -1.25rem;
       text-shadow: 5px 4px 0px $dark-bg;
+
+      @include mqXSmall {
+        font-size: 7.5rem;
+      }
     }
 
     &::before {
@@ -238,6 +242,10 @@
       bottom: -8.5rem;
       right: -1.3rem;
       text-shadow: -5px -4px 0px $dark-bg;
+
+      @include mqXSmall {
+        font-size: 7.5rem;
+      }
     }
 
     span {
