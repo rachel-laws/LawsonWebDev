@@ -28,14 +28,6 @@ document.addEventListener('click', function handleClickOutsideBox(event) {
   }
 });
 
-// Highlight Active Page
-
-navLink.forEach(link => {
-  if (link.href === window.location.href) {
-    link.setAttribute('aria-current', 'page');
-  }
-});
-
 // Helper Functions
 
 const hideNavbar = navLinks => {
@@ -54,33 +46,28 @@ const showNavbar = navLinks => {
   navLinks.classList.add('nav-visible');
 };
 
+// Highlight Active Page
+
+navLink.forEach(link => {
+  if (link.href === window.location.href) {
+    link.setAttribute('aria-current', 'page');
+  }
+});
+
 document.addEventListener('DOMContentLoaded', function () {
   const rewrittenHomeURL = 'https://lawsonwebdevelopment.com/';
   const rewrittenServicesURL = 'https://lawsonwebdevelopment.com/services';
   const rewrittenPricingURL = 'https://lawsonwebdevelopment.com/pricing';
-  const rewrittenContactURL = 'https://www.grayhousedemo.com/contact';
+  const rewrittenContactURL = 'https://lawsonwebdevelopment.com/contact';
 
   document.querySelectorAll('nav a').forEach(link => {
     const href = link.getAttribute('href');
 
     if (
-      href === rewrittenHomeURL &&
-      window.location.href === rewrittenHomeURL
-    ) {
-      link.setAttribute('aria-current', 'page');
-    } else if (
-      href === rewrittenServicesURL &&
-      window.location.href === rewrittenServicesURL
-    ) {
-      link.setAttribute('aria-current', 'page');
-    } else if (
-      href === rewrittenPricingURL &&
-      window.location.href === rewrittenPricingURL
-    ) {
-      link.setAttribute('aria-current', 'page');
-    } else if (
-      href === rewrittenContactURL &&
-      window.location.href === rewrittenContactURL
+      href === rewrittenHomeURL ||
+      href === rewrittenServicesURL ||
+      href === rewrittenPricingURL ||
+      href === rewrittenContactURL
     ) {
       link.setAttribute('aria-current', 'page');
     }
