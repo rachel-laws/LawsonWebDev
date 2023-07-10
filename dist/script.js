@@ -59,6 +59,8 @@ document.addEventListener('DOMContentLoaded', function () {
   const rewrittenServicesURL = 'https://lawsonwebdevelopment.com/services';
   const rewrittenPricingURL = 'https://lawsonwebdevelopment.com/pricing';
   const rewrittenContactURL = 'https://lawsonwebdevelopment.com/contact';
+  const rewrittenTermsURL = 'https://lawsonwebdevelopment.com/terms-of-service';
+  const rewrittenPrivacyURL = 'https://lawsonwebdevelopment.com/privacy-policy';
 
   document.querySelectorAll('nav a').forEach(link => {
     const href = link.getAttribute('href');
@@ -67,7 +69,9 @@ document.addEventListener('DOMContentLoaded', function () {
       href === rewrittenHomeURL ||
       href === rewrittenServicesURL ||
       href === rewrittenPricingURL ||
-      href === rewrittenContactURL
+      href === rewrittenContactURL ||
+      href === rewrittenTermsURL ||
+      href === rewrittenPrivacyURL
     ) {
       link.setAttribute('aria-current', 'page');
     }
