@@ -360,12 +360,12 @@ h2 {
 
 .home__quote p {
   line-height: 1.6;
-  font-size: 1.3rem;
+  font-size: 1.25rem;
   font-weight: 500;
 }
 @media all and (max-width: 750px) {
   .home__quote p {
-    font-size: 1.2rem;
+    font-size: 1.15rem;
   }
 }
 .home__quote p::after, .home__quote p::before {
