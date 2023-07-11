@@ -97,7 +97,7 @@ h2 {
   font-family: 'Josefin Sans', sans-serif;
   font-size: 3.3rem;
   font-weight: 700;
-  background: linear-gradient(#eac884 30%, #826938);
+  background: linear-gradient(#e4c380 30%, #886f46);
   text-shadow: 2px 2px #daa94548;
   color: transparent;
   -webkit-text-fill-color: transparent;
@@ -197,9 +197,10 @@ legend {
 
 .cta__question-contact {
   p {
-    color: $gold;
     font-weight: 600;
+    font-family: 'Roboto Slab', serif;
     font-size: 2.6rem;
+    color: $gray-bg;
 
     @include mqSmall {
       font-size: clamp(1rem, 7vw, 2rem);
