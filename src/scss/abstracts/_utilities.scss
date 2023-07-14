@@ -37,7 +37,7 @@
 
 .heading {
   @include flexCenter;
-  gap: 2.5rem;
+  gap: 2rem;
   margin-bottom: 2rem;
 
   @include mqMedium {
@@ -49,7 +49,6 @@
 
   @include mqSmall {
     padding-inline: 0;
-    gap: 1rem;
   }
 }
 

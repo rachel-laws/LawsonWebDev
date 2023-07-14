@@ -13,7 +13,6 @@ nav {
   height: 3.1rem;
   padding-inline: 1.25rem 1.75rem;
   background: $dark-bg;
-  border-bottom: $thin-border;
   box-shadow: $nav-shadow;
 
   @include mqSmall {

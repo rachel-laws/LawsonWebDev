@@ -1,20 +1,21 @@
 @use '../abstracts' as *;
 
 .intro {
+  @include flexCenterColumn;
+
   .intro__heading {
-    margin-top: -1rem;
-    margin-bottom: 4rem;
+    margin-bottom: 5rem;
 
     @include mqSmall {
-      margin-top: 3rem;
-      margin-bottom: 3rem;
+      margin-top: 1rem;
+      margin-bottom: 3.5rem;
     }
 
     img {
-      width: 14.5rem;
-      margin-bottom: 0.75rem;
+      width: 13rem;
 
       @include mqMedium {
+        width: 9rem;
         order: 2;
       }
     }
@@ -25,23 +26,21 @@
     grid-template-columns: repeat(3, 1fr);
     grid-auto-rows: 1fr;
     align-items: stretch;
-    gap: 4vw;
-    padding-inline: 1rem;
+    justify-content: center;
+    gap: 2rem;
 
     @include mqMedium {
       grid-template-columns: 1fr;
-      gap: 3rem;
-      padding-inline: 1rem;
+      gap: 2rem;
     }
   }
 
   .intro__service {
     position: relative;
     @include flexColumn;
-    justify-content: flex-start;
     gap: 1rem;
     overflow: hidden;
-    margin-inline: auto;
+    max-width: 20rem;
     padding: 1.5rem 2rem 1.75rem;
 
     line-height: $card-lh;
@@ -51,10 +50,6 @@
     border-radius: $card-br;
     box-shadow: $card-shadow;
     transition: $ease-in;
-
-    @include mqMedium {
-      height: auto;
-    }
 
     img {
       margin-inline: auto;
@@ -113,17 +108,18 @@
 
 .cta__links {
   @include flexCenter;
-  gap: 7vw;
+  gap: 2rem;
   width: 100%;
-  padding-block: 4rem;
+  padding-block: 3rem;
 
   background: $dark-bg;
-  border-block: $standard-border;
   box-shadow: $section-shadow;
 
   @include mqMedium {
     flex-direction: column;
-    gap: 2rem;
+    gap: 1.5rem;
+    padding-block: 2rem;
+    margin-block: 2rem;
   }
 }
 
@@ -131,25 +127,26 @@
   @include flexCenterColumn;
 
   .about__heading {
-    margin-top: 0.5rem;
-
     img {
-      width: 8rem;
+      width: 7rem;
       animation: wiggle 8s infinite;
 
+      @include mqMedium {
+        order: 2;
+      }
+
       @include mqSmall {
-        width: 7rem;
+        width: 6rem;
       }
     }
   }
 
   .about__list {
-    display: grid;
+    display: flex;
     justify-content: space-between;
-    grid-template-columns: 30% 60%;
-
     margin-top: 3rem;
-    margin-left: 3rem;
+    margin-left: -2rem;
+    gap: 3rem;
 
     @include mqMedium {
       @include flexCenterColumn;
@@ -163,19 +160,19 @@
     }
 
     img {
-      width: 37rem;
-      height: 28rem;
+      width: 34rem;
+      height: 25rem;
       margin-top: -0.5rem;
+      margin-right: -5rem;
       filter: brightness(110%);
 
-      @include mqSmall {
-        width: 120%;
-        height: 120%;
-        margin-left: -2rem;
+      @include mqMedium {
+        margin-inline: 0rem 2rem;
       }
 
-      @include mqXSmall {
-        width: 95%;
+      @include mqSmall {
+        width: 100%;
+        height: 100%;
       }
     }
 
@@ -183,18 +180,20 @@
       position: relative;
       height: min-content;
       width: max-content;
+      font-size: 1.25rem;
+      font-weight: 500;
 
       li:not(:last-of-type) {
-        margin-bottom: 0.8rem;
+        margin-bottom: 1rem;
       }
 
       &::after {
         @include pseudoElement;
-        top: 6px;
-        left: -1.5rem;
-        height: 98%;
-        width: 0.25rem;
-        background: #0000001c;
+        top: 3px;
+        left: -1.25rem;
+        height: 99%;
+        width: 2px;
+        background: #00000013;
         border-radius: 1px;
       }
     }
@@ -202,12 +201,7 @@
 }
 
 .home__quote {
-  padding-block: 4rem;
-  padding-inline: 23vw;
-
-  background: $dark-bg;
-  border-block: $standard-border;
-  box-shadow: $section-shadow;
+  padding-block: 3rem;
 
   @include mqMedium {
     padding-inline: 8vw;
@@ -215,13 +209,16 @@
 
   p {
     position: relative;
-    padding: 2.5rem 4rem;
-    background: $quote-bg;
-    border-radius: 1px;
-    box-shadow: -4px 4px 25px black;
+    padding: 2.5rem 5rem;
+    background: $card-bg;
+    border-radius: $card-br;
+    box-shadow: $card-shadow;
+    margin-block: 2rem;
+    max-width: 52rem;
 
     @include mqSmall {
       padding: 2rem;
+      margin-block: 0rem;
     }
 
     &::after {

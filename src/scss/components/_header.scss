@@ -19,7 +19,6 @@ header {
     @include flexCenter;
     padding-block: 1rem;
     background: $dark-bg;
-    border-block: $thin-border;
 
     ul {
       @include flexCenter;
@@ -42,7 +41,7 @@ header {
 
 .home__header {
   .header__img {
-    height: 70vh;
+    height: 50vh;
     background-image: url('/assets/img/header_home.jpg');
 
     @include mqMedium {
@@ -57,8 +56,6 @@ header {
 }
 
 .services__header {
-  border-bottom: $thin-border;
-
   .header__img {
     height: 25vh;
     background-image: url('/assets/img/header_img.png');
