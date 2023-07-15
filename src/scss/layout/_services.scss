@@ -3,15 +3,18 @@
 .services {
   @include flexCenterColumn;
   gap: 3rem;
-  margin-top: -1rem;
 
   @include mqSmall {
-    gap: 2rem;
+    gap: 1.5rem;
+
+    h1 {
+      margin-top: -1rem;
+    }
   }
 
   h1,
   h2 {
-    margin-bottom: 4rem;
+    margin-bottom: 5rem;
 
     @include mqSmall {
       margin-bottom: 3rem;
@@ -29,7 +32,9 @@
 .main-services__container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr 1fr;
   gap: 0.25rem;
+  align-items: stretch;
 
   @include mqMedium {
     grid-template-columns: repeat(2, 1fr);
@@ -45,7 +50,6 @@
 .main-services__card {
   position: relative;
   display: flex;
-  align-items: stretch;
   overflow: hidden;
 
   // Slide down cover card on hover
@@ -123,10 +127,11 @@
 
 .process {
   margin-top: 0rem;
-  margin-bottom: 6rem;
+  margin-bottom: 10rem;
 
   @include mqSmall {
     overflow: hidden;
+    margin-bottom: 5rem;
   }
 
   h2 {
